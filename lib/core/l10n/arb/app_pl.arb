@@ -1264,7 +1264,7 @@
   },
   "assistantUnavailable": "Asystent AI jest niedostępny w tej wersji aplikacji. Szybkie odpowiedzi działają offline.",
   "assistantPrivacyTitle": "Zanim zapytasz",
-  "assistantPrivacy": "Pytania, wybrane zdjęcia i dane trawnika trafiają przez nasz serwer do Google Gemini. Na darmowych warunkach Google może je wykorzystać do ulepszania swoich usług. Nie dołączaj zdjęć z osobami.",
+  "assistantPrivacy": "Pytania, wybrane zdjęcia, dane trawnika z nazwą miejscowości, pogoda i ostatnie notatki z dziennika trafiają przez nasz serwer do modeli AI w usłudze Cloudflare. Odpowiedzi mogą być błędne. Nie wpisuj danych osobowych i nie dołączaj zdjęć z osobami.",
   "assistantPrivacyAccept": "Rozumiem",
   "navToday": "Dziś",
   "navCalendar": "Kalendarz",
@@ -1647,5 +1647,7 @@
   "backupNothingToExport": "Nie ma jeszcze danych do zapisania.",
   "backupSummary": "Kopia z {date}. Trawniki: {lawns}, zdjęcia: {photos}.",
   "@backupSummary": {"placeholders": {"date": {"type": "String"}, "lawns": {"type": "int"}, "photos": {"type": "int"}}},
-  "backupCancel": "Anuluj"
+  "backupCancel": "Anuluj",
+  "privacyPolicy": "Polityka prywatności",
+  "privacyPolicyFailed": "Nie udało się otworzyć strony."
 }

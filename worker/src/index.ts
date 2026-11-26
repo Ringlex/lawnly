@@ -6,14 +6,13 @@ import {
   readToday,
 } from './context';
 import type { Env } from './env';
-import { geminiProvider } from './gemini';
 import { firstAnswer, type ModelRequest } from './model';
-import { privacyPage } from './privacy';
+import { privacyPage, privacyPageEn } from './privacy';
 import { ASK_SYSTEM, DIAGNOSIS_SYSTEM, inLanguage } from './prompts';
 import { handleReport } from './report';
 import { ASK_SCHEMA, DIAGNOSIS_SCHEMA } from './schemas';
 import { json, sha256 } from './util';
-import { workersAiProvider } from './workers-ai';
+import { workersAiProviders } from './workers-ai';
 
 const ASSISTANT_ROUTES = ['/v1/diagnose', '/v1/ask'];
 
@@ -23,7 +22,10 @@ const QUOTA_ROUTE = '/v1/quota';
 /** Zgłoszenie odpowiedzi. Nie kosztuje pytania, bo wtedy nikt by nie zgłaszał. */
 const REPORT_ROUTE = '/v1/report';
 
-const PAGES: Record<string, () => Response> = { '/privacy': privacyPage };
+const PAGES: Record<string, () => Response> = {
+  '/privacy': privacyPage,
+  '/privacy/en': privacyPageEn,
+};
 
 /** Zdjęcie po kompresji w aplikacji. Ponad to odrzucamy. */
 const MAX_IMAGE_BYTES = 4 * 1024 * 1024;
@@ -193,10 +195,7 @@ function buildAskRequest(body: Record<string, unknown>): ModelRequest {
 // --- wywołanie modelu --------------------------------------------------------
 
 async function answer(env: Env, request: ModelRequest, quota: QuotaResult): Promise<Response> {
-  const gemini = geminiProvider(env);
-  const workersAi = workersAiProvider(env);
-  const providers = request.images.length > 0 ? [gemini, workersAi] : [workersAi, gemini];
-  const text = await firstAnswer(providers, request);
+  const text = await firstAnswer(workersAiProviders(env, request), request);
 
   if (!text) {
     console.error('all_providers_failed');

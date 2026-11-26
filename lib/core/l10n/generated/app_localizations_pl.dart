@@ -1653,7 +1653,7 @@ class L10nPl extends L10n {
 
   @override
   String get assistantPrivacy =>
-      'Pytania, wybrane zdjęcia i dane trawnika trafiają przez nasz serwer do Google Gemini. Na darmowych warunkach Google może je wykorzystać do ulepszania swoich usług. Nie dołączaj zdjęć z osobami.';
+      'Pytania, wybrane zdjęcia, dane trawnika z nazwą miejscowości, pogoda i ostatnie notatki z dziennika trafiają przez nasz serwer do modeli AI w usłudze Cloudflare. Odpowiedzi mogą być błędne. Nie wpisuj danych osobowych i nie dołączaj zdjęć z osobami.';
 
   @override
   String get assistantPrivacyAccept => 'Rozumiem';
@@ -2538,4 +2538,10 @@ class L10nPl extends L10n {
 
   @override
   String get backupCancel => 'Anuluj';
+
+  @override
+  String get privacyPolicy => 'Polityka prywatności';
+
+  @override
+  String get privacyPolicyFailed => 'Nie udało się otworzyć strony.';
 }

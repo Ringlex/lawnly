@@ -18,7 +18,7 @@ Lawnly is a lawn care planner built with Flutter. It schedules mowing, watering,
 
 - Flutter and Dart
 - flutter_bloc, freezed, get_it, go_router
-- Cloudflare Worker backend for the AI assistant (Google Gemini, with Workers AI as fallback)
+- Cloudflare Worker backend for the AI assistant (Cloudflare Workers AI)
 - Weather data from [MET Norway](https://api.met.no); geocoding and past rainfall from [Open-Meteo](https://open-meteo.com)
 
 ## Getting started
@@ -47,13 +47,12 @@ fvm flutter run --dart-define=ASSISTANT_URL=https://your-worker.example.workers.
 
 Pass an empty value (`--dart-define=ASSISTANT_URL=`) to turn the assistant off.
 
-To deploy the worker, create your own KV namespace, put its id in `worker/wrangler.toml`, and set your Gemini API key as a secret:
+To deploy the worker, create your own KV namespace, and put its id in `worker/wrangler.toml`:
 
 ```sh
 cd worker
 npm install
 npx wrangler kv namespace create QUOTA
-npx wrangler secret put GEMINI_API_KEY
 npm run deploy
 ```
 

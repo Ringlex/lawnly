@@ -18,6 +18,7 @@ import 'package:lawnly/presentation/calendar/care_kind_style.dart';
 import 'package:lawnly/presentation/common/dimen.dart';
 import 'package:lawnly/presentation/common/form_controls.dart';
 import 'package:lawnly/presentation/common/motion_widgets.dart';
+import 'package:lawnly/presentation/common/privacy_policy_link.dart';
 import 'package:lawnly/presentation/common/state_type.dart';
 import 'package:lawnly/presentation/common/text_utils.dart';
 import 'package:lawnly/presentation/common/weekday_label.dart';
@@ -113,6 +114,15 @@ class LawnPage extends StatelessWidget {
                 Gap.xLarge,
                 _SectionTitle(strings.languageTitle),
                 const _LanguagePicker(),
+                Gap.xLarge,
+                _Group(
+                  children: [
+                    _SettingRow(
+                      label: strings.privacyPolicy,
+                      onTap: () => openPrivacyPolicy(context),
+                    ),
+                  ],
+                ),
               ],
             ),
           );

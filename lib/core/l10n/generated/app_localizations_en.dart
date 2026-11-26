@@ -1644,7 +1644,7 @@ class L10nEn extends L10n {
 
   @override
   String get assistantPrivacy =>
-      'Questions, selected photos and lawn details are sent through our server to Google Gemini. Under the free terms Google may use them to improve its services. Don\'t include photos of people.';
+      'Questions, selected photos, lawn details with the town name, weather and recent journal notes are sent through our server to AI models on Cloudflare. Answers can be wrong. Don\'t enter personal information or include photos of people.';
 
   @override
   String get assistantPrivacyAccept => 'I understand';
@@ -2529,4 +2529,10 @@ class L10nEn extends L10n {
 
   @override
   String get backupCancel => 'Cancel';
+
+  @override
+  String get privacyPolicy => 'Privacy policy';
+
+  @override
+  String get privacyPolicyFailed => 'Could not open the page.';
 }

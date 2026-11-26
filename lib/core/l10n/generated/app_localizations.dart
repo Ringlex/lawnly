@@ -2640,7 +2640,7 @@ abstract class L10n {
   /// No description provided for @assistantPrivacy.
   ///
   /// In pl, this message translates to:
-  /// **'Pytania, wybrane zdjęcia i dane trawnika trafiają przez nasz serwer do Google Gemini. Na darmowych warunkach Google może je wykorzystać do ulepszania swoich usług. Nie dołączaj zdjęć z osobami.'**
+  /// **'Pytania, wybrane zdjęcia, dane trawnika z nazwą miejscowości, pogoda i ostatnie notatki z dziennika trafiają przez nasz serwer do modeli AI w usłudze Cloudflare. Odpowiedzi mogą być błędne. Nie wpisuj danych osobowych i nie dołączaj zdjęć z osobami.'**
   String get assistantPrivacy;
 
   /// No description provided for @assistantPrivacyAccept.
@@ -3920,6 +3920,18 @@ abstract class L10n {
   /// In pl, this message translates to:
   /// **'Anuluj'**
   String get backupCancel;
+
+  /// No description provided for @privacyPolicy.
+  ///
+  /// In pl, this message translates to:
+  /// **'Polityka prywatności'**
+  String get privacyPolicy;
+
+  /// No description provided for @privacyPolicyFailed.
+  ///
+  /// In pl, this message translates to:
+  /// **'Nie udało się otworzyć strony.'**
+  String get privacyPolicyFailed;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

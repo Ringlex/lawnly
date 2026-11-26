@@ -41,7 +41,7 @@ Future<XFile?> pickAssistantPhoto(BuildContext context) async {
 }
 
 Future<bool> ensureAssistantConsent(BuildContext context) async {
-  const key = 'assistant.privacyAccepted';
+  const key = 'assistant.privacyAccepted.v2';
   final preferences = await SharedPreferences.getInstance();
   if (preferences.getBool(key) ?? false) return true;
   if (!context.mounted) return false;

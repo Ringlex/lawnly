@@ -27,4 +27,9 @@ abstract class AppConfig {
     'ASSISTANT_URL',
     defaultValue: 'https://lawnly-assistant.pitstop-garage.workers.dev',
   );
+
+  static const _privacyPolicyUrl = 'https://lawnly-assistant.pitstop-garage.workers.dev/privacy';
+
+  static Uri privacyPolicy({required bool english}) =>
+      Uri.parse(english ? '$_privacyPolicyUrl/en' : _privacyPolicyUrl);
 }
