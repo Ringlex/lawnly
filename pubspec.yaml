@@ -2,7 +2,7 @@ name: lawnly
 description: "Pielęgnacja trawnika: zabiegi planowane pod prognozę pogody."
 publish_to: 'none'
 
-version: 0.1.0+1
+version: 1.0.0+1
 
 # Flutter 3.41.0 / Dart 3.11.0 (patrz .fvmrc)
 environment:
