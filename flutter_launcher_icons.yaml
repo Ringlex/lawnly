@@ -1,0 +1,14 @@
+# Ikony aplikacji. Źródła w assets/branding (SVG + PNG 1024 px).
+# Generowanie: fvm dart run flutter_launcher_icons
+flutter_launcher_icons:
+  image_path: "assets/branding/icon.png"
+  android: "ic_launcher"
+  ios: true
+  remove_alpha_ios: true
+  min_sdk_android: 21
+  # Ikona adaptacyjna Androida: źdźbła na tle Murawy, system przycina kształt.
+  adaptive_icon_background: "#1E5631"
+  adaptive_icon_foreground: "assets/branding/icon_foreground.png"
+  adaptive_icon_monochrome: "assets/branding/icon_foreground.png"
+  # Plik ma już margines na maskę systemu, bez dodatkowego wcięcia źdźbła byłyby za małe.
+  adaptive_icon_foreground_inset: 0

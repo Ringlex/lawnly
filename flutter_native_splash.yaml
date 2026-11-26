@@ -1,0 +1,16 @@
+# Systemowy splash, widoczny zanim wystartuje Flutter. Kolory jak na ekranie SplashPage,
+# więc przejście do niego jest płynne. Generowanie: fvm dart run flutter_native_splash:create
+flutter_native_splash:
+  color: "#1E5631"
+  image: "assets/branding/splash_logo.png"
+
+  # Android 12+: system pokazuje ikonę w kole, więc same źdźbła na ciemniejszym kole.
+  android_12:
+    color: "#1E5631"
+    image: "assets/branding/splash_android12.png"
+    icon_background_color: "#174A28"
+
+  android: true
+  ios: true
+  web: false
+  fullscreen: false

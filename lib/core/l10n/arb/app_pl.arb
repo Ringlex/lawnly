@@ -1,0 +1,1623 @@
+{
+  "@@locale": "pl",
+  "appTagline": "Właściwy zabieg we właściwym dniu",
+  "splashChecking": "Sprawdzam prognozę pogody…",
+  "commonNext": "Dalej",
+  "commonBack": "Wstecz",
+  "commonDontKnow": "Nie wiem",
+  "commonOptional": "(opcjonalnie)",
+  "commonLess": "Mniej dni",
+  "commonMore": "Więcej dni",
+  "commonRetry": "Spróbuj ponownie",
+  "routeNotFoundTitle": "Nie ma takiej strony",
+  "routeNotFoundAction": "Wróć na start",
+  "commonMinutes": "min",
+  "commonSquareMeters": "m²",
+  "daysCount": "{count, plural, =1{1 dzień} other{{count} dni}}",
+  "@daysCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "weekdayShort": "{day, select, mon{Pn} tue{Wt} wed{Śr} thu{Cz} fri{Pt} sat{Sb} sun{Nd} other{}}",
+  "@weekdayShort": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      }
+    }
+  },
+  "onboardingStep": "Krok {step} z {total}",
+  "@onboardingStep": {
+    "placeholders": {
+      "step": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "onboardingFinish": "Utwórz mój plan",
+  "onboardingSkipRest": "Utwórz plan teraz, resztę uzupełnię później",
+  "onboardingSaveError": "Nie udało się zapisać. Spróbuj ponownie.",
+  "locationTitle": "Poznajmy Twój trawnik",
+  "locationBody": "Bez zakładania konta. Wszystkie dane zostają w aplikacji, a lokalizacja służy tylko do pobierania prognozy pogody.",
+  "locationNameLabel": "Nazwa trawnika",
+  "locationNameHint": "np. Przed domem",
+  "locationLabel": "Lokalizacja",
+  "locationUseMine": "Użyj mojej lokalizacji",
+  "locationOr": "lub",
+  "locationCityHint": "Wpisz miejscowość",
+  "locationCurrent": "Bieżąca lokalizacja",
+  "locationTip": "Dokładna lokalizacja trawnika poprawia trafność rad, bo deszcz w mieście nie zawsze pada nad Twoim ogrodem.",
+  "locationServiceDisabled": "Włącz usługi lokalizacji w telefonie albo wpisz miejscowość.",
+  "locationPermissionDenied": "Bez zgody na lokalizację wpisz miejscowość ręcznie.",
+  "locationNotFound": "Nie znalazłem takiej miejscowości.",
+  "locationNetwork": "Brak połączenia z internetem. Spróbuj ponownie.",
+  "basicsTitle": "Podstawowe dane",
+  "basicsBody": "Wiek trawnika decyduje, kiedy można robić wertykulację czy aerację.",
+  "basicsAreaLabel": "Powierzchnia",
+  "basicsAreaHelper": "Potrzebne do wyliczenia dawki nawozu i nasion.",
+  "basicsEstablishedLabel": "Data założenia trawnika",
+  "basicsEstablishedHint": "Wybierz miesiąc i rok",
+  "basicsEstablishedHelper": "Wystarczy miesiąc i rok.",
+  "basicsLawnAge": "Wystarczy miesiąc i rok. Wiek trawnika: {seasons, plural, =0{pierwszy sezon} =1{ok. 1 sezon} few{ok. {seasons} sezony} other{ok. {seasons} sezonów}}.",
+  "@basicsLawnAge": {
+    "placeholders": {
+      "seasons": {
+        "type": "int"
+      }
+    }
+  },
+  "basicsMethodLabel": "Sposób założenia",
+  "basicsMethodSeeded": "Z siewu",
+  "basicsMethodSod": "Z rolki",
+  "basicsSunLabel": "Nasłonecznienie",
+  "basicsSunFull": "Słońce",
+  "basicsSunPartial": "Półcień",
+  "basicsSunShade": "Cień",
+  "soilTitle": "Mieszanka i gleba",
+  "soilBody": "Nie wiesz? Wybierz „nie wiem”, uzupełnisz później.",
+  "soilMixLabel": "Mieszanka traw",
+  "soilMixUniversal": "Uniwersalna / rekreacyjna",
+  "soilMixUniversalHint": "Odporna na deptanie, dla rodzin i zwierząt",
+  "soilMixOrnamental": "Ozdobna / parterowa",
+  "soilMixOrnamentalHint": "Gęsta, niskie koszenie, wymagająca",
+  "soilMixShade": "Do cienia",
+  "soilMixDrought": "Na suszę",
+  "soilMixSport": "Sportowa",
+  "soilTypeLabel": "Rodzaj gleby",
+  "soilTypeSandy": "Piaszczysta",
+  "soilTypeMedium": "Średnia",
+  "soilTypeClay": "Gliniasta",
+  "soilPhLabel": "pH gleby",
+  "soilPhHint": "np. 6,2 z testu paskowego",
+  "soilPhError": "Podaj wartość od 3 do 9.",
+  "careTitle": "Podlewanie i koszenie",
+  "careWateringLabel": "Jak podlewasz?",
+  "careWateringAuto": "Automatycznie",
+  "careWateringManual": "Ręcznie",
+  "careSectionTime": "Czas pracy jednej sekcji",
+  "careSectionHelper": "Ile to milimetrów wody, zmierzymy później prostym testem z kubeczkiem.",
+  "careManualHelper": "Podpowiemy, kiedy podlać i ile wody dać.",
+  "careMowingLabel": "Koszenie co",
+  "careLastMowedLabel": "Ostatnie koszenie",
+  "careGardenDaysLabel": "Kiedy masz czas na ogród?",
+  "careGardenDaysHelper": "Zabiegi zaplanujemy na najlepszy z tych dni.",
+  "feedTitle": "Nawożenie",
+  "feedBody": "Podaj, jak nawozisz. Dzień wybierzemy sami, gdy pogoda będzie sprzyjać.",
+  "feedIntervalLabel": "Nawożę co",
+  "feedWindowLabel": "Elastyczne okno",
+  "feedWindowRange": "{start}–{end} dzień",
+  "@feedWindowRange": {
+    "placeholders": {
+      "start": {
+        "type": "int"
+      },
+      "end": {
+        "type": "int"
+      }
+    }
+  },
+  "feedWindowHelper": "Jeśli warunki będą idealne, powiadomimy Cię wcześniej lub później niż {interval}. dnia.",
+  "@feedWindowHelper": {
+    "placeholders": {
+      "interval": {
+        "type": "int"
+      }
+    }
+  },
+  "feedLastLabel": "Ostatnie nawożenie",
+  "feedLastHint": "Wybierz datę",
+  "feedLastUnknown": "Nie pamiętam",
+  "homeBadgeIdeal": "Idealny dzień",
+  "homeCycleDay": "dzień {day} z {interval}",
+  "@homeCycleDay": {
+    "placeholders": {
+      "day": {
+        "type": "int"
+      },
+      "interval": {
+        "type": "int"
+      }
+    }
+  },
+  "homeRainFrom": "Od {hour}:00 lekki deszcz, ok. {mm} mm, wmyje nawóz",
+  "@homeRainFrom": {
+    "placeholders": {
+      "hour": {
+        "type": "int"
+      },
+      "mm": {
+        "type": "String"
+      }
+    }
+  },
+  "homeRain": "Lekki deszcz, ok. {mm} mm, wmyje nawóz",
+  "@homeRain": {
+    "placeholders": {
+      "mm": {
+        "type": "String"
+      }
+    }
+  },
+  "homeNoRain": "Bez deszczu: podlej trawnik po nawożeniu",
+  "homeSeason": "{season, select, spring{Wiosną: nawóz z przewagą azotu.} summer{Latem: mniejsze dawki, nie nawoź w upał.} autumn{Jesienią: nawóz z przewagą potasu.} other{Zimą trawnik odpoczywa, nawożenie wstrzymane.}}",
+  "@homeSeason": {
+    "placeholders": {
+      "season": {
+        "type": "String"
+      }
+    }
+  },
+  "homeDone": "Zrobione",
+  "homeDoneSnack": "Zapisane. Następne nawożenie za ok. {interval} dni.",
+  "@homeDoneSnack": {
+    "placeholders": {
+      "interval": {
+        "type": "int"
+      }
+    }
+  },
+  "homePostponedSnack": "Szukam innego dnia w oknie nawożenia.",
+  "homeTodayWork": "Dziś do zrobienia",
+  "homeNothingToday": "Dziś nie ma prac w ogrodzie.",
+  "homeSeasonOver": "Sezon na trawniku zakończony. Trawa odpoczywa, plan prac wróci {date}.",
+  "@homeSeasonOver": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "homeBadgeToday": "Dziś",
+  "homeBadgeNext": "Najbliższe prace",
+  "homePostponeFertilizing": "Przesuń nawożenie",
+  "homeDoneGeneric": "Zapisane jako zrobione.",
+  "homeMarkDone": "Oznacz jako zrobione",
+  "homeNextDays": "Najbliższe dni",
+  "homeCalendar": "Kalendarz",
+  "homeRainMm": "{mm} mm",
+  "@homeRainMm": {
+    "placeholders": {
+      "mm": {
+        "type": "String"
+      }
+    }
+  },
+  "homeTemperatureShort": "{temp}°",
+  "@homeTemperatureShort": {
+    "placeholders": {
+      "temp": {
+        "type": "int"
+      }
+    }
+  },
+  "homeWateringNotNeeded": "Podlewanie: niepotrzebne",
+  "homeWateringNeeded": "Podlewanie: potrzebne",
+  "homeWateringRain": "Bilans wody w normie, deszcz zrobi swoje",
+  "homeWateringCool": "Chłodno, trawnik zużywa mało wody",
+  "homeWateringAuto": "Zraszacz: {minutes} min na sekcję, wcześnie rano",
+  "@homeWateringAuto": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "homeWateringManual": "Podlej wcześnie rano, ok. {litres} l wody na każdy m²",
+  "homeLoadError": "Nie udało się wczytać prognozy pogody.",
+  "homeBadgePinned": "Przypięte",
+  "careKind": "{kind, select, fertilizing{Nawożenie} mowing{Koszenie} watering{Podlewanie} aeration{Aeracja} scarification{Wertykulacja} overseeding{Dosiewanie} liming{Wapnowanie} other{Inny}}",
+  "@careKind": {
+    "placeholders": {
+      "kind": {
+        "type": "String"
+      }
+    }
+  },
+  "calendarTitle": "Kalendarz",
+  "calendarAdd": "Dodaj zabieg",
+  "calendarPrevMonth": "Poprzedni miesiąc",
+  "calendarNextMonth": "Następny miesiąc",
+  "calendarLegendOwn": "Twój zabieg",
+  "calendarLegendWindow": "Okno nawożenia",
+  "calendarLegendTentative": "Termin wstępny, bez prognozy",
+  "calendarToday": "Dziś, {date}",
+  "@calendarToday": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "calendarEmptyDay": "Brak zabiegów tego dnia.",
+  "weatherRainFrom": "{temp}°, deszcz od {hour}:00",
+  "@weatherRainFrom": {
+    "placeholders": {
+      "temp": {
+        "type": "int"
+      },
+      "hour": {
+        "type": "int"
+      }
+    }
+  },
+  "weatherRain": "{temp}°, {mm} mm deszczu",
+  "@weatherRain": {
+    "placeholders": {
+      "temp": {
+        "type": "int"
+      },
+      "mm": {
+        "type": "String"
+      }
+    }
+  },
+  "weatherDry": "{temp}°, sucho",
+  "@weatherDry": {
+    "placeholders": {
+      "temp": {
+        "type": "int"
+      }
+    }
+  },
+  "entryDone": "Zrobione",
+  "entryTentative": "Termin wstępny · okno {start}–{end}",
+  "@entryTentative": {
+    "placeholders": {
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    }
+  },
+  "entryPinned": "Przypięte",
+  "entryEvery": "Co {days}",
+  "@entryEvery": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "entryBeforeRain": "Rano, zanim zacznie padać",
+  "entryOwn": "Twój zabieg",
+  "entryMoved": "Przesunięte z {date} przez pogodę",
+  "@entryMoved": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sheetFromPlan": "Z Twojego planu, co {days}",
+  "@sheetFromPlan": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "sheetTagTentative": "Termin wstępny",
+  "sheetTagMatched": "Dopasowane do pogody",
+  "sheetTagFixed": "Stały termin",
+  "sheetWindow": "Okno nawożenia: {start}–{end}, czyli {from}.–{to}. dzień od poprzedniego nawożenia.",
+  "@sheetWindow": {
+    "placeholders": {
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      },
+      "from": {
+        "type": "int"
+      },
+      "to": {
+        "type": "int"
+      }
+    }
+  },
+  "sheetForecastLater": "Prognoza obejmie to okno ok. {date}. Wtedy wybierzemy najlepszy z Twoich dni.",
+  "@sheetForecastLater": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sheetNextCycle": "Dokładny termin ustalimy po poprzednim nawożeniu.",
+  "sheetMowing": "Koszenie co {days}, w Twoje dni na ogród.",
+  "@sheetMowing": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "sheetFlexible": "Przesuniemy zabieg najwyżej o 2 dni, jeśli pogoda będzie lepsza.",
+  "sheetFixed": "Stały termin, nie przesuwamy go.",
+  "sheetPin": "Przypnij do {date}",
+  "@sheetPin": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sheetPinHelper": "Przypiętego dnia nie przesuniemy, ale ostrzeżemy przed złą pogodą.",
+  "sheetUnpin": "Dopasuj do pogody",
+  "sheetChangeDate": "Zmień termin",
+  "sheetSkipCycle": "Pomiń ten cykl",
+  "sheetDelete": "Usuń",
+  "sheetRemove": "Usuń z kalendarza",
+  "sheetRemoved": "Usunięto z kalendarza.",
+  "sheetUndo": "Cofnij",
+  "sheetClose": "Zamknij",
+  "addTitle": "Nowy zabieg",
+  "addEditTitle": "Zmień zabieg",
+  "addKind": "Rodzaj",
+  "addDate": "Termin",
+  "addFlexLabel": "Gdy pogoda się zmieni",
+  "addKeepDay": "Trzymaj ten dzień",
+  "addFitWeather": "Dopasuj do pogody",
+  "addFlexHelper": "Przesuniemy zabieg najwyżej o 2 dni i damy Ci znać.",
+  "addNote": "Notatka",
+  "addNoteHint": "np. pożyczyć aerator od sąsiada",
+  "addSave": "Zapisz w kalendarzu",
+  "addNoForecast": "Prognozy na ten dzień jeszcze nie ma. Sprawdzimy ją bliżej terminu.",
+  "addGoodWeather": "{date}: {weather}. Pogoda sprzyja.",
+  "@addGoodWeather": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "weather": {
+        "type": "String"
+      }
+    }
+  },
+  "addBadWeather": "{date}: {weather}. {hint}",
+  "@addBadWeather": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "weather": {
+        "type": "String"
+      },
+      "hint": {
+        "type": "String"
+      }
+    }
+  },
+  "addMoveTo": "Przenieś na {date} · {weather}",
+  "@addMoveTo": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "weather": {
+        "type": "String"
+      }
+    }
+  },
+  "careWeatherHint": "{kind, select, fertilizing{Pogoda nie sprzyja nawożeniu.} mowing{Mokra trawa źle się kosi.} watering{Deszcz podleje trawnik za Ciebie.} aeration{Mokra gleba oblepia kolce aeratora.} scarification{Wertykulację rób na suchym trawniku.} overseeding{Ulewa albo upał zaszkodzą nasionom.} liming{Wapno rozsiewaj bez silnego wiatru i ulewy.} other{Pogoda tego dnia nie sprzyja.}}",
+  "@careWeatherHint": {
+    "placeholders": {
+      "kind": {
+        "type": "String"
+      }
+    }
+  },
+  "sheetStripPlan": "plan",
+  "sheetStripBusy": "bez czasu",
+  "sheetTagPinned": "Przypięte",
+  "weatherOpen": "Prognoza na 14 dni",
+  "weatherTitle": "Pogoda",
+  "weatherNow": "Teraz",
+  "weatherWind": "Wiatr {speed} km/h",
+  "@weatherWind": {
+    "placeholders": {
+      "speed": {
+        "type": "int"
+      }
+    }
+  },
+  "weatherTodayRange": "Dziś {max}° / {min}°",
+  "@weatherTodayRange": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      },
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "weatherRainChance": "Szansa opadu {chance}%",
+  "@weatherRainChance": {
+    "placeholders": {
+      "chance": {
+        "type": "int"
+      }
+    }
+  },
+  "weatherDays": "Najbliższe 14 dni",
+  "weatherLessCertain": "Dalsze dni: prognoza mniej pewna",
+  "weatherToday": "Dziś",
+  "weatherTomorrow": "Jutro",
+  "weatherMinMax": "{max}° / {min}°",
+  "@weatherMinMax": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      },
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "weatherSource": "Dane pogodowe: MET Norway (met.no)",
+  "dayHourly": "Godzina po godzinie",
+  "dayNoForecast": "Prognoza na ten dzień jeszcze niedostępna.",
+  "dayPlanned": "Zaplanowane prace",
+  "dayMowingLegend": "Dobra pora na koszenie: sucha trawa, bez rosy i upału",
+  "dayWindMax": "Wiatr do {speed} km/h",
+  "@dayWindMax": {
+    "placeholders": {
+      "speed": {
+        "type": "int"
+      }
+    }
+  },
+  "journalTitle": "Dziennik",
+  "journalAdd": "Dodaj wpis",
+  "journalSeason": "Sezon {year}",
+  "@journalSeason": {
+    "placeholders": {
+      "year": {
+        "type": "int"
+      }
+    }
+  },
+  "journalSummary": "Podsumowanie",
+  "journalMowings": "{count, plural, one{koszenie} few{koszenia} many{koszeń} other{koszeń}}",
+  "@journalMowings": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "journalFertilizings": "{count, plural, one{nawożenie} few{nawożenia} many{nawożeń} other{nawożeń}}",
+  "@journalFertilizings": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "journalWaterings": "{count, plural, one{podlewanie} few{podlewania} many{podlewań} other{podlewań}}",
+  "@journalWaterings": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "journalFilterAll": "Wszystko",
+  "journalFilterNotes": "Notatki",
+  "journalFilterPhotos": "Zdjęcia",
+  "journalEmpty": "Dziennik jest pusty. Wpisy pojawią się, gdy oznaczysz zabieg jako zrobiony albo dodasz notatkę.",
+  "journalFilterEmpty": "Brak wpisów tego rodzaju.",
+  "journalKind": "{kind, select, observation{Obserwacja} photo{Zdjęcie} measurement{Pomiar pH} other{Zabieg}}",
+  "@journalKind": {
+    "placeholders": {
+      "kind": {
+        "type": "String"
+      }
+    }
+  },
+  "observationTag": "{tag, select, moss{Mech} weeds{Chwasty} yellowPatches{Żółte plamy} bareSpots{Łyse miejsca} grubs{Pędraki} other{Kretowisko}}",
+  "@observationTag": {
+    "placeholders": {
+      "tag": {
+        "type": "String"
+      }
+    }
+  },
+  "journalDose": "{dose} {unit, select, mlPerSqm{ml/m²} other{g/m²}}",
+  "@journalDose": {
+    "placeholders": {
+      "dose": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "journalTotal": "{amount} {unit, select, mlPerSqm{l} other{kg}} na {area} m²",
+  "@journalTotal": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      },
+      "area": {
+        "type": "int"
+      }
+    }
+  },
+  "journalHeight": "Wysokość {cm} cm",
+  "@journalHeight": {
+    "placeholders": {
+      "cm": {
+        "type": "String"
+      }
+    }
+  },
+  "journalPh": "pH {value}",
+  "@journalPh": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "journalDetailsMissing": "Dodaj szczegóły: nawóz i dawkę",
+  "journalRainConfirmed": "Wmyte deszczem",
+  "journalDoneAt": "zrobione o {time}",
+  "@journalDoneAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "journalProduct": "Nawóz",
+  "journalNpk": "NPK",
+  "journalDoseLabel": "Dawka",
+  "journalWholeLawn": "Na cały trawnik",
+  "journalRainAfter": "Opady po zabiegu",
+  "journalRainDays": "3 dni",
+  "journalRainSource": "Według modelu pogody dla Twojej lokalizacji.",
+  "journalRainQuestion": "Czy u Ciebie padało?",
+  "journalYes": "Tak",
+  "journalNo": "Nie",
+  "journalRainYes": "Potwierdziłeś, że u Ciebie padało. Nawóz został wmyty.",
+  "journalRainNo": "U Ciebie nie padało. Przy nawożeniu bez deszczu podlej potem trawnik.",
+  "journalNote": "Notatka",
+  "journalEdit": "Edytuj",
+  "journalDelete": "Usuń wpis",
+  "journalDeleted": "Wpis usunięty.",
+  "journalNewTitle": "Nowy wpis",
+  "journalEditTitle": "Edytuj wpis",
+  "journalWhatSeen": "Co zauważyłeś?",
+  "journalDescription": "Opis",
+  "journalDescriptionHint": "np. mech pod brzozą, ok. 2 m²",
+  "journalPhotos": "Zdjęcia",
+  "journalCamera": "Aparat",
+  "journalGallery": "Galeria",
+  "journalRemovePhoto": "Usuń zdjęcie",
+  "journalDate": "Data",
+  "journalPhValue": "Wynik pomiaru pH",
+  "journalPhHint": "np. 6,2",
+  "journalProductHint": "np. jesienny z potasem",
+  "journalNpkHint": "np. 5-3-10",
+  "journalDoseHint": "np. 30",
+  "journalHeightLabel": "Wysokość koszenia",
+  "journalMinutesLabel": "Czas podlewania",
+  "journalSave": "Zapisz w dzienniku",
+  "journalSeasonRange": "{start} – {end} · {name}",
+  "@journalSeasonRange": {
+    "placeholders": {
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      },
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "journalMonths": "Zabiegi w miesiącach",
+  "journalLegendMowing": "koszenie",
+  "journalLegendFertilizing": "nawożenie",
+  "journalNitrogen": "Azot w sezonie",
+  "journalNitrogenValue": "{kg} kg / 100 m²",
+  "@journalNitrogenValue": {
+    "placeholders": {
+      "kg": {
+        "type": "String"
+      }
+    }
+  },
+  "journalNitrogenRange": "Orientacyjnie dla Twojej mieszanki: {min}–{max} kg.",
+  "@journalNitrogenRange": {
+    "placeholders": {
+      "min": {
+        "type": "String"
+      },
+      "max": {
+        "type": "String"
+      }
+    }
+  },
+  "journalNitrogenMissing": "Uzupełnij skład NPK i dawkę przy nawożeniach, żeby policzyć azot.",
+  "journalFertilizerUsed": "Nawóz",
+  "journalLiquid": "i {litres} l płynnego",
+  "@journalLiquid": {
+    "placeholders": {
+      "litres": {
+        "type": "String"
+      }
+    }
+  },
+  "journalRain": "Deszcz",
+  "journalRainMm": "{mm} mm",
+  "@journalRainMm": {
+    "placeholders": {
+      "mm": {
+        "type": "String"
+      }
+    }
+  },
+  "journalObservations": "Obserwacje do sprawdzenia",
+  "homeWateringCalibrated": "Zraszacz: {minutes} min na sekcję, ok. {mm} mm, wcześnie rano",
+  "@homeWateringCalibrated": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "mm": {
+        "type": "String"
+      }
+    }
+  },
+  "journalWateringMm": "i {mm} mm z podlewania",
+  "@journalWateringMm": {
+    "placeholders": {
+      "mm": {
+        "type": "String"
+      }
+    }
+  },
+  "lawnTitle": "Trawnik",
+  "lawnsTitle": "Twoje trawniki",
+  "lawnsOpen": "Zmień lub dodaj trawnik",
+  "lawnsEditSection": "Edytuj wybrany trawnik",
+  "lawnsEditData": "Nazwa i dane trawnika",
+  "lawnsAdd": "Dodaj nowy trawnik",
+  "lawnsNotificationsNote": "Powiadomienia przychodzą dla wybranego trawnika.",
+  "lawnSubtitle": "{place} · {area} m² · {age}",
+  "@lawnSubtitle": {
+    "placeholders": {
+      "place": {
+        "type": "String"
+      },
+      "area": {
+        "type": "int"
+      },
+      "age": {
+        "type": "String"
+      }
+    }
+  },
+  "lawnAge": "{seasons, plural, =0{pierwszy sezon} =1{1 sezon} few{{seasons} sezony} other{{seasons} sezonów}}",
+  "@lawnAge": {
+    "placeholders": {
+      "seasons": {
+        "type": "int"
+      }
+    }
+  },
+  "lawnPh": "pH gleby",
+  "lawnLastFertilized": "Nawożenie",
+  "lawnLastMowed": "Koszenie",
+  "lawnObservations": "{count, plural, =1{1 obserwacja do sprawdzenia} few{{count} obserwacje do sprawdzenia} other{{count} obserwacji do sprawdzenia}}: {tags}",
+  "@lawnObservations": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "tags": {
+        "type": "String"
+      }
+    }
+  },
+  "lawnSettings": "Ustawienia trawnika",
+  "lawnData": "Dane trawnika",
+  "lawnCare": "Pielęgnacja",
+  "lawnCalibration": "Kalibracja zraszacza",
+  "lawnMowingEvery": "Koszenie co {days}",
+  "@lawnMowingEvery": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "lawnCareSub": "Nawożenie co {days} · {weekdays}",
+  "@lawnCareSub": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      },
+      "weekdays": {
+        "type": "String"
+      }
+    }
+  },
+  "lawnNotCalibrated": "Nie wykonano",
+  "lawnRate": "{rate} mm/min",
+  "@lawnRate": {
+    "placeholders": {
+      "rate": {
+        "type": "String"
+      }
+    }
+  },
+  "lawnAppearance": "Wygląd",
+  "lawnThemeLight": "Jasny",
+  "lawnThemeDark": "Ciemny",
+  "lawnThemeSystem": "Systemowy",
+  "lawnSave": "Zapisz",
+  "lawnSaved": "Zapisano.",
+  "lawnEstablished": "Założony",
+  "lawnMix": "Mieszanka",
+  "lawnSoil": "Gleba",
+  "lawnPhFromJournal": "Z pomiaru w dzienniku, {date}.",
+  "@lawnPhFromJournal": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "lawnHeight": "Wysokość",
+  "lawnHeightValue": "{cm} cm",
+  "@lawnHeightValue": {
+    "placeholders": {
+      "cm": {
+        "type": "int"
+      }
+    }
+  },
+  "lawnGardenDays": "Dni na ogród",
+  "lawnWatering": "Podlewanie",
+  "lawnSectionMm": "Ok. {mm} mm na jedno podlewanie.",
+  "@lawnSectionMm": {
+    "placeholders": {
+      "mm": {
+        "type": "String"
+      }
+    }
+  },
+  "lawnSeason": "Sezon",
+  "lawnSeasonStart": "Początek",
+  "lawnSeasonEnd": "Koniec",
+  "lawnSeasonHelper": "Poza sezonem nie planujemy koszenia, nawożenia ani podlewania.",
+  "lawnSeasonInvalid": "Koniec sezonu musi być po jego początku.",
+  "calSubtitle": "Ile wody daje minuta podlewania",
+  "calStep1Title": "Rozstaw 4 kubki",
+  "calStep1": "Proste naczynia o płaskim dnie, w różnych miejscach jednej sekcji.",
+  "calStep2Title": "Włącz sekcję na {minutes} min",
+  "@calStep2Title": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "calStep2": "Tak jak zwykle podlewasz, bez zmiany ustawień zraszaczy.",
+  "calStep3Title": "Zmierz wodę linijką",
+  "calStep3": "Wpisz wysokość wody w każdym kubku.",
+  "calTestTime": "Czas testu",
+  "calCup": "Kubek {number}",
+  "@calCup": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "calResult": "Wynik",
+  "calRate": "{rate} mm na minutę",
+  "@calRate": {
+    "placeholders": {
+      "rate": {
+        "type": "String"
+      }
+    }
+  },
+  "calAverage": "Średnio {mm} mm w {minutes} min. Żeby podlać {target} mm, włącz sekcję na {needed} min.",
+  "@calAverage": {
+    "placeholders": {
+      "mm": {
+        "type": "String"
+      },
+      "minutes": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      },
+      "needed": {
+        "type": "int"
+      }
+    }
+  },
+  "calEven": "Kubki różnią się o {mm} mm: rozkład wody jest równy.",
+  "@calEven": {
+    "placeholders": {
+      "mm": {
+        "type": "String"
+      }
+    }
+  },
+  "calUneven": "Kubki różnią się o {mm} mm: sprawdź zraszacze, część trawnika dostaje mniej wody.",
+  "@calUneven": {
+    "placeholders": {
+      "mm": {
+        "type": "String"
+      }
+    }
+  },
+  "calMissing": "Wpisz wynik z co najmniej jednego kubka.",
+  "calSave": "Zapisz wynik",
+  "homeWateringMoves": "Zraszacz na wężu: {minutes} min w jednym miejscu, przestaw ok. {moves} razy",
+  "@homeWateringMoves": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "moves": {
+        "type": "int"
+      }
+    }
+  },
+  "homeWateringSpot": "Zraszacz na wężu: {minutes} min w jednym miejscu",
+  "@homeWateringSpot": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "homeWateringHose": "Wąż: ok. {perSqm} min na m², cały trawnik ok. {total}.",
+  "@homeWateringHose": {
+    "placeholders": {
+      "perSqm": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "homeWateringInParts": "{parts, plural, few{Podziel na {parts} wieczory.} many{Podziel na {parts} wieczorów.} other{Podziel na {parts} wieczory.}}",
+  "@homeWateringInParts": {
+    "placeholders": {
+      "parts": {
+        "type": "int"
+      }
+    }
+  },
+  "homeWateringCan": "Konewka: {litres} l na m², czyli {cans} konewki {can} l. Zacznij od najsuchszych miejsc.",
+  "@homeWateringCan": {
+    "placeholders": {
+      "litres": {
+        "type": "String"
+      },
+      "cans": {
+        "type": "String"
+      },
+      "can": {
+        "type": "int"
+      }
+    }
+  },
+  "durationMinutes": "{minutes} min",
+  "@durationMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "durationHours": "{hours} h",
+  "@durationHours": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "durationHoursMinutes": "{hours} h {minutes} min",
+  "@durationHoursMinutes": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "manualMethodLabel": "Czym podlewasz?",
+  "manualSprinkler": "Zraszacz",
+  "manualHose": "Wąż",
+  "manualCan": "Konewka",
+  "lawnMeasurement": "Pomiar podlewania",
+  "lawnMethodNone": "Nie wybrano",
+  "lawnFlow": "{flow} l/min",
+  "@lawnFlow": {
+    "placeholders": {
+      "flow": {
+        "type": "String"
+      }
+    }
+  },
+  "lawnCanValue": "Konewka {litres} l",
+  "@lawnCanValue": {
+    "placeholders": {
+      "litres": {
+        "type": "int"
+      }
+    }
+  },
+  "calCoverage": "Zasięg zraszacza",
+  "calCoverageHelper": "Powierzchnia podlewana z jednego miejsca. Koło o średnicy 6 m to ok. 28 m².",
+  "calMoves": "Przy {area} m² przestawiaj zraszacz ok. {moves} razy.",
+  "@calMoves": {
+    "placeholders": {
+      "area": {
+        "type": "int"
+      },
+      "moves": {
+        "type": "int"
+      }
+    }
+  },
+  "calHoseSubtitle": "Ile wody daje wąż w minutę",
+  "calBucketStep1Title": "Weź wiadro o znanej pojemności",
+  "calBucketStep1": "Najlepiej 10 l. Ustaw pistolet tak, jak zwykle podlewasz.",
+  "calBucketStep2Title": "Zmierz czas napełniania",
+  "calBucketStep2": "Odkręć wodę i stoperem zmierz, po ilu sekundach wiadro jest pełne.",
+  "calBucket": "Pojemność wiadra",
+  "calBucketLitres": "{litres} l",
+  "@calBucketLitres": {
+    "placeholders": {
+      "litres": {
+        "type": "int"
+      }
+    }
+  },
+  "calSeconds": "Czas napełniania",
+  "calSecondsHint": "np. 50",
+  "calFlow": "{flow} l na minutę",
+  "@calFlow": {
+    "placeholders": {
+      "flow": {
+        "type": "String"
+      }
+    }
+  },
+  "calHoseResult": "Żeby podlać {target} mm: ok. {perSqm} min na każdy m², cały trawnik ({area} m²) ok. {total}.",
+  "@calHoseResult": {
+    "placeholders": {
+      "target": {
+        "type": "int"
+      },
+      "perSqm": {
+        "type": "String"
+      },
+      "area": {
+        "type": "int"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "calSecondsMissing": "Wpisz, po ilu sekundach wiadro jest pełne.",
+  "calCanTitle": "Podlewanie konewką",
+  "calCanText": "Na {target} mm wody potrzeba {litres} l na każdy m², czyli {cans} konewki {can} l. Cały trawnik ({area} m²) to ok. {total} l, dlatego konewką podlewaj tylko najbardziej suche miejsca.",
+  "@calCanText": {
+    "placeholders": {
+      "target": {
+        "type": "int"
+      },
+      "litres": {
+        "type": "String"
+      },
+      "cans": {
+        "type": "String"
+      },
+      "can": {
+        "type": "int"
+      },
+      "area": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "journalMinutesSpot": "Minut w jednym miejscu",
+  "journalLitresLabel": "Ilość wody",
+  "journalLitres": "{litres} l wody",
+  "@journalLitres": {
+    "placeholders": {
+      "litres": {
+        "type": "String"
+      }
+    }
+  },
+  "calHoseByBucket": "Wiadro",
+  "calHoseByCups": "Kubki",
+  "calHoseCupsStep1Title": "Wyznacz kawałek trawnika",
+  "calHoseCupsStep1": "Np. kwadrat 3 × 3 m. Rozstaw w nim 4 kubki.",
+  "calHoseCupsStep2Title": "Podlewaj go wężem przez {minutes} min",
+  "@calHoseCupsStep2Title": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "calHoseCupsStep2": "Tak jak zwykle, równo po całym kawałku, bez wychodzenia poza niego.",
+  "calTestArea": "Powierzchnia kawałka",
+  "calHoseCupsFlow": "Na trawnik trafia średnio {mm} mm w {minutes} min, czyli ok. {flow} l na minutę.",
+  "@calHoseCupsFlow": {
+    "placeholders": {
+      "mm": {
+        "type": "String"
+      },
+      "minutes": {
+        "type": "int"
+      },
+      "flow": {
+        "type": "String"
+      }
+    }
+  },
+  "calAreaMissing": "Wpisz powierzchnię kawałka i wynik z co najmniej jednego kubka.",
+  "assistantTitle": "Asystent",
+  "assistantSubtitle": "Zna Twój trawnik, pogodę i dziennik",
+  "assistantAskHint": "Zapytaj o swój trawnik…",
+  "assistantFollowHint": "Dopytaj…",
+  "assistantSend": "Wyślij",
+  "assistantAddPhoto": "Dodaj zdjęcie",
+  "assistantQuota": "Zostało {remaining} z {limit} pytań na dziś",
+  "@assistantQuota": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      },
+      "limit": {
+        "type": "int"
+      }
+    }
+  },
+  "assistantQuotaCost": "Zużyje 1 z {remaining} pozostałych pytań",
+  "@assistantQuotaCost": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "assistantProblems": "Co Cię niepokoi?",
+  "lawnProblem": "{problem, select, yellowPatches{Żółte plamy} dryGrass{Sucha trawa} moss{Mech} weeds{Chwasty} bareSpots{Łyse miejsca} fungus{Grzyby, pleśń} molehills{Kretowiska} other{Pędraki}}",
+  "@lawnProblem": {
+    "placeholders": {
+      "problem": {
+        "type": "String"
+      }
+    }
+  },
+  "assistantQuick": "Szybkie odpowiedzi",
+  "assistantOffline": "offline",
+  "assistantOfflineAnswer": "Odpowiedź offline, bez limitu",
+  "quickWeek": "Co zrobić w tym tygodniu?",
+  "quickScarify": "Kiedy mogę wertykulować?",
+  "quickWinter": "Jak przygotować trawnik do zimy?",
+  "quickWeekNone": "W najbliższych 7 dniach nie ma zaplanowanych prac.",
+  "quickWeekIntro": "Plan na najbliższe 7 dni:",
+  "quickScarifyNow": "Tak, to dobry czas. Wertykulację rób na suchym, świeżo skoszonym trawniku, a łyse miejsca od razu dosiej.",
+  "quickScarifyLater": "Teraz nie. Wertykulacja rani darń, więc trawa musi potem szybko odrosnąć: najlepiej wiosną albo pod koniec lata.",
+  "quickScarifyNext": "Najbliższy dobry termin: od {date}.",
+  "@quickScarifyNext": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "quickScarifyNowPreview": "Teraz to dobry czas",
+  "quickScarifyLaterPreview": "Od {date}",
+  "@quickScarifyLaterPreview": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "quickWinterText": "1. Ostatnie koszenie na ok. 5 cm, gdy trawa przestaje rosnąć.\n2. Do końca października nawóz jesienny z przewagą potasu.\n3. Grabienie liści: nie zostawiaj ich na zimę.\n4. Nie chodź po zamarzniętej trawie.",
+  "quickWinterPreview": "4 kroki przed zimą",
+  "diagnoseSubtitle": "Diagnoza ze zdjęcia",
+  "diagnosePhotos": "Zdjęcia",
+  "diagnosePhotosHint": "Najlepiej dwa: cała plama i z bliska.",
+  "diagnoseDescribe": "Opisz, co widzisz",
+  "diagnoseDescribeHint": "np. nieregularne plamy, trawa łatwo się odrywa",
+  "diagnoseSince": "Od kiedy?",
+  "diagnoseSinceOption": "{since, select, days{Kilka dni} weeks{1–2 tygodnie} month{Ponad miesiąc} other{Nie wiem}}",
+  "@diagnoseSinceOption": {
+    "placeholders": {
+      "since": {
+        "type": "String"
+      }
+    }
+  },
+  "diagnoseContextTitle": "Asystent dostanie też",
+  "diagnoseContext": "Dane trawnika ({area} m², {mix}), opady z 14 dni, prognozę i ostatnie wpisy z dziennika.",
+  "@diagnoseContext": {
+    "placeholders": {
+      "area": {
+        "type": "int"
+      },
+      "mix": {
+        "type": "String"
+      }
+    }
+  },
+  "diagnoseButton": "Zdiagnozuj",
+  "diagnoseWorking": "Analizuję…",
+  "resultTitle": "Wynik diagnozy",
+  "resultMost": "Najpewniej",
+  "resultUrgency": "{urgency, select, actNow{działaj teraz} soon{w najbliższych tygodniach} other{nie pilne}}",
+  "@resultUrgency": {
+    "placeholders": {
+      "urgency": {
+        "type": "String"
+      }
+    }
+  },
+  "resultLikelihood": "{level, select, high{wysokie} medium{średnie} other{niskie}}",
+  "@resultLikelihood": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "resultCheck": "Jak to sprawdzić",
+  "resultActions": "Proponowane zabiegi",
+  "assistantToCalendar": "Do kalendarza",
+  "assistantAddedToCalendar": "Dodano do kalendarza.",
+  "assistantSaveJournal": "Zapisz w dzienniku",
+  "assistantSavedJournal": "Zapisano w dzienniku.",
+  "assistantReport": "Zgłoś odpowiedź",
+  "assistantAiNote": "Odpowiedź AI może się mylić. Przy środkach ochrony roślin kieruj się etykietą produktu.",
+  "reportTitle": "Co jest nie tak z odpowiedzią?",
+  "reportReason": "{reason, select, wrong{Błędna} offensive{Obraźliwa} dangerous{Niebezpieczna} other{Inny powód}}",
+  "@reportReason": {
+    "placeholders": {
+      "reason": {
+        "type": "String"
+      }
+    }
+  },
+  "reportNote": "Komentarz",
+  "reportSend": "Wyślij zgłoszenie",
+  "reportSent": "Dziękujemy, sprawdzimy tę odpowiedź.",
+  "assistantError": "{error, select, quotaExceeded{Wykorzystałeś dzisiejsze pytania. Limit odnowi się jutro.} offline{Brak połączenia z internetem.} busy{Asystent jest teraz zajęty. Spróbuj za chwilę.} badImage{Nie udało się wysłać zdjęcia. Spróbuj z innym.} other{Nie udało się uzyskać odpowiedzi. Spróbuj ponownie.}}",
+  "@assistantError": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "assistantUnavailable": "Asystent AI jest niedostępny w tej wersji aplikacji. Szybkie odpowiedzi działają offline.",
+  "assistantPrivacyTitle": "Zanim zapytasz",
+  "assistantPrivacy": "Pytania, wybrane zdjęcia i dane trawnika trafiają przez nasz serwer do Google Gemini. Na darmowych warunkach Google może je wykorzystać do ulepszania swoich usług. Nie dołączaj zdjęć z osobami.",
+  "assistantPrivacyAccept": "Rozumiem",
+  "navToday": "Dziś",
+  "navCalendar": "Kalendarz",
+  "navJournal": "Dziennik",
+  "navAssistant": "Asystent",
+  "navLawn": "Trawnik",
+  "@homeWateringManual": {
+    "placeholders": {
+      "litres": {
+        "type": "int"
+      }
+    }
+  },
+  "guideTopicTitle": "{topic, select, scarification{Wertykulacja} aeration{Aeracja} raking{Wyczesywanie} overseeding{Dosiewka} sanding{Piaskowanie} liming{Wapnowanie} other{}}",
+  "@guideTopicTitle": {
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "guideTopicSummary": "{topic, select, scarification{Usuwa filc i mech, przewietrza darń} aeration{Napowietrza ubitą glebę, woda i nawóz docierają do korzeni} raking{Lekko usuwa martwą trawę, liście i cienki filc} overseeding{Zagęszcza trawnik i wypełnia łyse miejsca} sanding{Rozluźnia ciężką glebę i wyrównuje powierzchnię} liming{Odkwasza glebę, gdy pH spadnie za nisko} other{}}",
+  "@guideTopicSummary": {
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "guideTopicWhen": "{topic, select, scarification{Kwiecień–maj, opcjonalnie koniec sierpnia–wrzesień} aeration{Kwiecień–maj albo wrzesień} raking{Marzec–kwiecień i jesienią, z liśćmi} overseeding{Koniec sierpnia–wrzesień, kwiecień–maj} sanding{Zaraz po aeracji, wiosną lub we wrześniu} liming{Październik–listopad, przy pH poniżej 5,5} other{}}",
+  "@guideTopicWhen": {
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "guideTopicWhenText": "{topic, select, scarification{Gdy trawa intensywnie rośnie, a gleba ma co najmniej 10°C. Zwykle po 2–3 wiosennym koszeniu. Nie w upale i nie na mokrej glebie.} aeration{Gdy trawa rośnie i szybko zarośnie otwory. Gleba ma być wilgotna, ale nie mokra: kolce wchodzą wtedy łatwo i nie mażą gleby.} raking{Wiosną, gdy trawnik obeschnie po zimie, i jesienią, gdy spadają liście. Jest delikatniejsze od wertykulacji, więc można je robić częściej.} overseeding{Najlepiej od końca sierpnia do połowy września: gleba jest ciepła, a rosa trzyma wilgoć. Wiosną wtedy, gdy gleba ma co najmniej 8–10°C.} sanding{Najlepiej od razu po aeracji lub wertykulacji, póki otwory są otwarte. Trawnik i piasek muszą być suche.} liming{Jesienią, po ostatnim nawożeniu, albo wczesną wiosną. Tylko gdy pomiar pokaże kwaśną glebę: trawa najlepiej rośnie przy pH 5,5–7.} other{}}",
+  "@guideTopicWhenText": {
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "guideTopicSigns": "{topic, select, scarification{Pod źdźbłami jest sprężysta warstwa filcu grubsza niż 1 cm\nMiędzy trawą rośnie mech\nTrawnik słabo reaguje na nawóz i podlewanie} aeration{Po deszczu na trawniku długo stoi woda\nGleba jest twarda, śrubokręt ledwo w nią wchodzi\nTrawa rzednie na ścieżkach i w miejscach zabaw} raking{Po zimie trawa jest zbita i zeschnięta\nNa trawniku leżą liście i resztki skoszonej trawy\nFilc jest cienki, poniżej 1 cm} overseeding{Trawnik rzednie i widać glebę\nPo zimie lub wertykulacji zostały łyse placki\nW lukach wyrastają chwasty} sanding{Gleba jest gliniasta i zbita\nPo deszczu długo stoi woda\nNa trawniku są drobne nierówności} liming{Pomiar pH pokazał wynik poniżej 5,5\nNa trawniku rozrasta się mech\nTrawa słabo reaguje na nawożenie} other{}}",
+  "@guideTopicSigns": {
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "guideTopicSteps": "{topic, select, scarification{Skoś nisko: Na 3–4 cm, dzień lub dwa wcześniej. Trawnik musi być suchy.\nUstaw noże płytko: Mają nacinać glebę na 2–3 mm. Głębiej uszkodzisz korzenie.\nPrzejdź wzdłuż, potem w poprzek: Równym tempem, bez zatrzymywania się w jednym miejscu.\nZgrab wyczesany filc: Może go być zaskakująco dużo. Trawnik przez 2 tygodnie wygląda gorzej, to normalne.\nDosiej i nawieź: Łyse miejsca dosiej od razu, potem nawóz wiosenny.\nPodlewaj: Regularnie przez 2–3 tygodnie, jeśli nie pada.} aeration{Skoś trawnik: Na zwykłą wysokość, dzień wcześniej.\nPodlej, jeśli jest sucho: Dzień przed aeracją, żeby gleba zmiękła.\nNakłuj glebę: Aeratorem z pustymi kolcami na 6–10 cm, co około 10 cm.\nZostaw rdzenie: Po 1–2 dniach wyschną, wtedy rozbij je grabiami.\nZasyp otwory piaskiem: Piaskowanie zaraz po aeracji daje najlepszy efekt.\nNawieź i podlej: Składniki trafią prosto do korzeni.} raking{Poczekaj, aż trawnik obeschnie: Mokrą darń łatwo wyrwać razem z korzeniami.\nWyczesz grabiami wachlarzowymi: Energicznie, ale płytko, w dwóch kierunkach.\nZbierz resztki: Liście i martwą trawę wyrzuć na kompost.\nDosiej ubytki: Łyse miejsca po zimie dosiej, gdy gleba ma 8–10°C.} overseeding{Przygotuj glebę: Wyczesz lub wertykuluj trawnik, łyse miejsca spulchnij grabiami.\nWysiej nasiona: 15–20 g/m², a na łyse miejsca 25–35 g/m². Siej w dwóch kierunkach.\nPrzykryj cienko: Około 0,5 cm ziemi lub piasku, potem lekko zwałuj.\nPodlewaj codziennie: Delikatnie, małą dawką, przez 2–3 tygodnie, aż trawa wzejdzie.\nSkoś pierwszy raz: Gdy młoda trawa ma 8–10 cm, skoś ją na 5–6 cm.} sanding{Zrób aerację: Piasek ma wpaść w otwory po kolcach.\nRozsyp piasek: 3–5 l/m², czyli warstwa 3–5 mm. Piasek płukany o ziarnie 0–2 mm.\nRozprowadź i wmieć: Odwróconymi grabiami lub szczotką, aż piasek zniknie w darni.\nPodlej: Woda spłucze resztki piasku z liści.} liming{Zmierz pH: Kwasomierzem lub paskami, w kilku miejscach trawnika.\nDobierz dawkę: Wapno węglanowe lub dolomit, zwykle 10–20 kg na 100 m². Dokładną dawkę podaje etykieta.\nRozsiej równo: Siewnikiem, przy bezwietrznej pogodzie, w dwóch kierunkach.\nPodlej lub poczekaj na deszcz: Wapno musi dostać się do gleby.\nSprawdź pH za rok: Nie wapnuj co sezon bez pomiaru.} other{}}",
+  "@guideTopicSteps": {
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "guideTopicTools": "{topic, select, scarification{Wertykulator\nGrabie\nNasiona do dosiewki\nNawóz wiosenny} aeration{Aerator z pustymi kolcami\nGrabie\nPiasek płukany} raking{Grabie wachlarzowe\nWyczesywarka (opcjonalnie)\nWorki lub kompostownik} overseeding{Nasiona tej samej mieszanki\nGrabie\nZiemia lub piasek do przykrycia\nWałek (opcjonalnie)} sanding{Piasek płukany 0–2 mm\nGrabie lub szczotka\nTaczka i łopata} liming{Kwasomierz lub paski pH\nWapno węglanowe lub dolomit\nSiewnik} other{}}",
+  "@guideTopicTools": {
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "guideTopicAvoid": "{topic, select, scarification{Trawnik młodszy niż 2 lata od siewu albo rok od położenia rolki. Wertykulacja w upale, suszy lub na mokrej glebie. Więcej niż 1–2 razy w roku.} aeration{Trawnik młodszy niż rok od założenia. Aeracja przesuszonej, twardej gleby albo w suszy. Pełne kolce na ciężkiej glebie tylko ją ugniatają. Na glebie gliniastej wystarczą 1–2 razy w roku, na piaszczystej rzadziej.} raking{Wyczesywanie mokrego lub zamarzniętego trawnika. Liście zostawione na zimę: trawa pod nimi gnije i łapie choroby.} overseeding{Siew w upał, w suszę albo w zimną glebę. Chodzenie po świeżym wysiewie. Środki na chwasty przez 6–8 tygodni przed siewem i po nim.} sanding{Piasek budowlany z gliną i drobny piasek pylasty. Warstwa grubsza niż 5 mm naraz: trawa się udusi. Na glebie piaszczystej piaskowanie zwykle nie jest potrzebne.} liming{Wapno razem z nawozem azotowym: zachowaj 3–4 tygodnie odstępu. Wapno tlenkowe (palone), które parzy trawę. Wapnowanie bez pomiaru pH.} other{}}",
+  "@guideTopicAvoid": {
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "guideMonthTitle": "{month, select, jan{Zima: trawnik odpoczywa} feb{Przygotowania do sezonu} mar{Wyczesywanie i pierwszy nawóz} apr{Wertykulacja i aeracja} may{Dosiewka i regularne koszenie} jun{Koszenie i podlewanie} jul{Upał: koś wyżej} aug{Dosiewka pod koniec miesiąca} sep{Aeracja, piaskowanie, dosiewka} oct{Wapnowanie i ostatnie koszenie} nov{Grabienie liści} dec{Zima: trawnik odpoczywa} other{}}",
+  "@guideMonthTitle": {
+    "placeholders": {
+      "month": {
+        "type": "String"
+      }
+    }
+  },
+  "guideMonthText": "{month, select, jan{Nie chodź po zamarzniętej trawie i zaplanuj wiosenne zabiegi.} feb{Naostrz noże kosiarki i sprawdź sprzęt przed wiosną.} mar{Gdy trawnik obeschnie, wygrab filc i liście. Pod koniec miesiąca daj nawóz startowy.} apr{Trawa rusza ze wzrostem. To najlepszy czas na zabiegi i dosiewkę łysych miejsc.} may{Ostatnia szansa na wiosenną wertykulację. Koś co 4–7 dni.} jun{Podlewaj rzadziej, ale obficiej, najlepiej rano.} jul{Podnieś kosiarkę o 1 cm i nie nawoź azotem w upale.} aug{Gdy upały miną, zaczyna się najlepszy czas na dosiewkę.} sep{Ciepła gleba i rosa pomagają trawnikowi szybko wrócić do siebie po zabiegach.} oct{Jesień to dobry moment, by odkwasić glebę przed zimą.} nov{Nie zostawiaj liści na zimę. Ostatnie koszenie na około 5 cm.} dec{Nie chodź po zamarzniętej trawie i nie zgarniaj na nią śniegu z solą.} other{}}",
+  "@guideMonthText": {
+    "placeholders": {
+      "month": {
+        "type": "String"
+      }
+    }
+  },
+  "guideTitle": "Poradnik",
+  "guideCare": "Zabiegi",
+  "guideCareSub": "Wertykulacja, aeracja, dosiewka i inne",
+  "guideCarePageSub": "Kiedy i jak je wykonać",
+  "guideFertilizing": "Nawożenie",
+  "guideFertilizingSub": "Rodzaje nawozów i skład NPK",
+  "guideFertilizingPageSub": "Jakie nawozy, kiedy i w jakim składzie",
+  "guideMowing": "Koszenie",
+  "guideMowingSub": "Wysokość, rytm i zasada 1/3",
+  "guideMowingPageSub": "Wysokość, rytm i dobre nawyki",
+  "guideMixes": "Mieszanki traw",
+  "guideMixesSub": "Dobór do trawnika i koszenie",
+  "guideMixesPageSub": "Jak dobrać i na jaką wysokość kosić",
+  "guideNowGood": "Teraz dobry czas",
+  "guideLater": "Później w sezonie",
+  "guideNextSeason": "W przyszłym sezonie",
+  "guideNowBadge": "Teraz",
+  "guideOrderTip": "Kolejność wiosną: wertykulacja, aeracja, piaskowanie, dosiewka, nawożenie. Każdy krok przygotowuje trawnik do następnego.",
+  "guideWhen": "Kiedy",
+  "guideBest": "najlepiej",
+  "guidePossible": "można",
+  "guideNowLegend": "teraz",
+  "guideSignsTitle": "Czy Twój trawnik tego potrzebuje?",
+  "guideStepsTitle": "Jak wykonać",
+  "guideToolsTitle": "Czego potrzebujesz",
+  "guideAvoidTitle": "Czego unikać",
+  "guidePlanNow": "Zaplanuj zabieg",
+  "guideAsk": "Zapytaj asystenta",
+  "guideYoursMix": "Twoja",
+  "guideNpkTitle": "Co oznacza N-P-K",
+  "guideNpkIntro": "Liczby na worku to procent składników. 20-5-8 oznacza 20% azotu, 5% fosforu i 8% potasu.",
+  "guideNitrogen": "Azot",
+  "guideNitrogenText": "Wzrost i zielony kolor",
+  "guidePhosphorus": "Fosfor",
+  "guidePhosphorusText": "Korzenie, ważny przy zakładaniu trawnika",
+  "guidePotassium": "Potas",
+  "guidePotassiumText": "Odporność na mróz, suszę i choroby",
+  "guideMicro": "Magnez (Mg) pogłębia kolor, a żelazo (Fe) daje intensywną zieleń i ogranicza mech.",
+  "guideFertSeasonsTitle": "Nawóz na porę roku",
+  "guideColSeason": "Pora",
+  "guideColNpk": "N-P-K",
+  "guideColWhy": "Po co",
+  "guideFertSeason1": "Marzec–kwiecień",
+  "guideFertSeason1Why": "Start wzrostu po zimie",
+  "guideFertSeason2": "Maj–czerwiec",
+  "guideFertSeason2Why": "Gęsta, równa darń",
+  "guideFertSeason3": "Lipiec–sierpień",
+  "guideFertSeason3Why": "Mniej azotu, odporność na upał",
+  "guideFertSeason4": "Wrzesień–październik",
+  "guideFertSeason4Why": "Korzenie i przezimowanie, dużo potasu",
+  "guideFertTypesTitle": "Rodzaje nawozów",
+  "guideColType": "Rodzaj",
+  "guideColWorks": "Działa",
+  "guideColEvery": "Co ile",
+  "guideFertSlow": "Granulowany wolnodziałający",
+  "guideFertFast": "Granulowany szybki",
+  "guideFertLiquid": "Płynny",
+  "guideFertOrganic": "Organiczny",
+  "guideFertSlowWorks": "2–3 mies.",
+  "guideFertSlowEvery": "8–12 tyg.",
+  "guideFertFastWorks": "4–6 tyg.",
+  "guideFertFastEvery": "4–6 tyg.",
+  "guideFertLiquidWorks": "1–2 tyg.",
+  "guideFertLiquidEvery": "2–3 tyg.",
+  "guideFertOrganicWorks": "2–3 mies.",
+  "guideFertOrganicEvery": "2–3 razy w sezonie",
+  "guideFertHowTitle": "Jak nawozić",
+  "guideFertHow": "Na suchą trawę, najlepiej przed lekkim deszczem. Inaczej podlej.\nSiewnikiem, w dwóch przejściach na krzyż, po pół dawki.\nNie w upale powyżej 25°C i nie przed ulewą.\nOd października bez azotu, tylko nawóz jesienny.",
+  "guideFertNote": "Proporcje N-P-K w tabeli są przykładowe. Dawkę na m² zawsze bierz z etykiety nawozu.",
+  "guideMowRuleLabel": "Zasada 1/3",
+  "guideMowRuleTitle": "Ścinaj najwyżej jedną trzecią wysokości",
+  "guideMowRhythmTitle": "Rytm w sezonie",
+  "guideColHeight": "Wysokość",
+  "guideMowSeason1": "Kwiecień",
+  "guideMowSeason1Every": "Gdy ma ok. 8 cm",
+  "guideMowSeason1Height": "Pierwsze cięcie tylko o 1–2 cm",
+  "guideMowSeason2": "Maj–czerwiec",
+  "guideMowSeason2Every": "Co 4–7 dni",
+  "guideMowSeason2Height": "Docelowa",
+  "guideMowSeason3": "Lipiec–sierpień",
+  "guideMowSeason3Every": "Co 7–10 dni",
+  "guideMowSeason3Height": "O 1 cm wyżej w upał",
+  "guideMowSeason4": "Wrzesień–listopad",
+  "guideMowSeason4Every": "Co 7–14 dni, aż przestanie rosnąć",
+  "guideMowSeason4Height": "Ostatnie cięcie na ok. 5 cm",
+  "guideMowHabitsTitle": "Dobre nawyki",
+  "guideMowHabits": "Ostre noże. Tępe szarpią źdźbła i końcówki brązowieją.\nTylko sucha trawa, bez porannej rosy i nie w największy upał.\nZmieniaj kierunek koszenia, żeby trawa nie kładła się w jedną stronę.\nMulczowanie oddaje trawnikowi azot, ale tylko przy regularnym koszeniu suchej trawy.",
+  "guideMowToday": "Kiedy dziś kosić?",
+  "guideMowTodaySub": "Dobre godziny mają zieloną ramkę w prognozie dnia",
+  "guideMixHowTitle": "Jak dobrać",
+  "guideMixListTitle": "Mieszanki i wysokość koszenia",
+  "guideMixWhenUniversal": "Słońce, dzieci, pies",
+  "guideMixWhenOrnamental": "Reprezentacyjny, mało deptany",
+  "guideMixWhenShade": "Pod drzewami, 3–4 h słońca",
+  "guideMixWhenDrought": "Piasek, rzadkie podlewanie",
+  "guideMixShort": "{mix, select, universal{Uniwersalna} ornamental{Ozdobna} shade{Do cienia} drought{Na suszę} sport{Sportowa} other{}}",
+  "@guideMixShort": {
+    "placeholders": {
+      "mix": {
+        "type": "String"
+      }
+    }
+  },
+  "guideMixText": "{mix, select, universal{Odporna na deptanie, dla rodzin i zwierząt} ornamental{Gęsta i niska, kosić nawet co 3–5 dni} shade{Koszona wyżej, żeby łapała więcej światła} drought{Głębokie korzenie, wysoka trawa chroni glebę} sport{Najszybciej się odradza po intensywnym użytkowaniu} other{}}",
+  "@guideMixText": {
+    "placeholders": {
+      "mix": {
+        "type": "String"
+      }
+    }
+  },
+  "guideMixSpecies": "{mix, select, universal{Życica trwała, kostrzewa czerwona, wiechlina łąkowa} ornamental{Kostrzewa czerwona, mietlica pospolita, wiechlina łąkowa} shade{Kostrzewa czerwona, wiechlina gajowa, śmiałek darniowy} drought{Kostrzewa trzcinowa, kostrzewa owcza, kostrzewa czerwona} sport{Życica trwała, wiechlina łąkowa} other{}}",
+  "@guideMixSpecies": {
+    "placeholders": {
+      "mix": {
+        "type": "String"
+      }
+    }
+  },
+  "guideSeedsTitle": "Ile nasion?",
+  "guideSeedsText": "Nowy trawnik 25–35 g/m², dosiewka 15–20 g/m². Do dosiewki wybierz tę samą mieszankę, co trawnik.",
+  "guideCm": "cm",
+  "guideNowInSeason": "Teraz w sezonie · {month}",
+  "@guideNowInSeason": {
+    "placeholders": {
+      "month": {
+        "type": "String"
+      }
+    }
+  },
+  "guidePlanOn": "Zaplanuj na {month}",
+  "@guidePlanOn": {
+    "placeholders": {
+      "month": {
+        "type": "String"
+      }
+    }
+  },
+  "guideAskQuestion": "Czy mój trawnik potrzebuje teraz zabiegu: {topic}? Kiedy najlepiej go zrobić?",
+  "@guideAskQuestion": {
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      }
+    }
+  },
+  "guideMowRuleText": "Trzymaj {height} cm i koś, gdy trawa ma około {max} cm.",
+  "@guideMowRuleText": {
+    "placeholders": {
+      "height": {
+        "type": "String"
+      },
+      "max": {
+        "type": "String"
+      }
+    }
+  },
+  "quickScarifyYoung": "Jeszcze nie. Twój trawnik jest za młody: wertykulację robi się najwcześniej 2 lata po siewie albo rok po położeniu rolki.",
+  "guideTooYoung": "Twój trawnik jest jeszcze za młody na ten zabieg. Bezpiecznie będzie od: {date}.",
+  "@guideTooYoung": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "guideTooYoungTitle": "Za młody trawnik",
+  "addTooYoung": "Trawnik jest za młody na zabieg „{kind}”. Darń musi się najpierw dobrze ukorzenić: bezpiecznie będzie od {date}.",
+  "@addTooYoung": {
+    "placeholders": {
+      "kind": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "addMoveToReady": "Przenieś na {date}",
+  "@addMoveToReady": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "noticeFrostTitle": "Uwaga na przymrozek",
+  "noticeFrostBody": "{day} do {temp}°C. Wstrzymaj nawożenie i wyłącz automatyczne podlewanie.",
+  "@noticeFrostBody": {"placeholders": {"day": {"type": "String"}, "temp": {"type": "int"}}},
+  "noticeHeatTitle": "Upał",
+  "noticeHeatBody": "{day} do {temp}°C. Podlewaj rano i nie kosz trawy.",
+  "@noticeHeatBody": {"placeholders": {"day": {"type": "String"}, "temp": {"type": "int"}}},
+  "noticeDownpourTitle": "Ulewa",
+  "noticeDownpourBody": "{day} ok. {mm} mm deszczu. Nie nawoź przed opadem.",
+  "@noticeDownpourBody": {"placeholders": {"day": {"type": "String"}, "mm": {"type": "String"}}},
+  "noticeMovedTitle": "Nawożenie przeniesione na {day}",
+  "@noticeMovedTitle": {"placeholders": {"day": {"type": "String"}}},
+  "noticeMovedBody": "Wybraliśmy lepszy dzień w oknie nawożenia.",
+  "noticeStaleTitle": "Prognoza sprzed {hours, plural, =1{1 godziny} other{{hours} godzin}}",
+  "@noticeStaleTitle": {"placeholders": {"hours": {"type": "int"}}},
+  "noticeStaleBody": "Rady mogą być mniej trafne. Odświeżymy po połączeniu.",
+  "noticeToday": "Dziś",
+  "noticeTomorrow": "Jutro",
+  "notifFertilizeIdealTitle": "Idealny dzień do nawożenia",
+  "notifFertilizeTitle": "Dziś nawożenie",
+  "notifFertilizeBody": "Dzień {cycleDay} z {interval}. Sprawdź prognozę przed rozsypaniem nawozu.",
+  "@notifFertilizeBody": {"placeholders": {"cycleDay": {"type": "int"}, "interval": {"type": "int"}}},
+  "notifFertilizeFallbackBody": "Otwórz plan, żeby zobaczyć szczegóły.",
+  "notifProgramTitle": "Dziś krok programu nawożenia",
+  "notifProgramRain": "Zapowiadany deszcz: {mm} mm. Rozważ przesunięcie terminu, żeby nawóz się nie wypłukał.",
+  "@notifProgramRain": {"placeholders": {"mm": {"type": "int"}}},
+  "notifMowingTitle": "Czas na koszenie",
+  "notifMowingBody": "Trawa jest gotowa na koszenie. Sprawdź wysokość cięcia.",
+  "notifWateringTitle": "Podlewanie",
+  "notifWateringBody": "Dziś bez deszczu, trawnik potrzebuje wody.",
+  "notifTaskTitle": "Zaplanowany zabieg",
+  "notifTaskBody": "Masz dziś zabieg w kalendarzu.",
+  "notifSettingsTitle": "Powiadomienia",
+  "notifSettingsIntro": "Najwyżej jedno dziennie. Wyjątek to ostrzeżenie o pogodzie dzień wcześniej. Cisza nocna od 21:00 do 7:00.",
+  "notifSettingsEnable": "Włącz powiadomienia",
+  "notifSettingsDenied": "Zezwól na powiadomienia w ustawieniach telefonu.",
+  "notifSettingsHour": "Pora poranna",
+  "notifSettingsHourValue": "{hour}:00",
+  "@notifSettingsHourValue": {"placeholders": {"hour": {"type": "int"}}},
+  "notifSettingsFertilizing": "Nawożenie",
+  "notifSettingsWatering": "Podlewanie",
+  "notifSettingsCare": "Koszenie i zabiegi",
+  "notifSettingsWarnings": "Ostrzeżenia pogodowe",
+  "notifSettingsOff": "Wyłączone",
+  "notifSettingsOn": "Włączone od {hour}:00",
+  "@notifSettingsOn": {"placeholders": {"hour": {"type": "int"}}},
+  "notifPlanChangedTitle": "Zmiana planu",
+  "notifPlanChangedBody": "Nawożenie przeniesione na {date}.",
+  "@notifPlanChangedBody": {"placeholders": {"date": {"type": "String"}}},
+  "homeOffSeasonTitle": "Trawnik odpoczywa",
+  "homeDoneNextWindow": "Zapisane w dzienniku. Następne okno: {range}.",
+  "@homeDoneNextWindow": {"placeholders": {"range": {"type": "String"}}},
+  "notifSeasonTitle": "Zaczyna się sezon",
+  "notifSeasonBody": "Plan prac na nowy sezon jest gotowy.",
+  "programsTitle": "Programy nawożenia",
+  "programsOff": "Wyłączone",
+  "programsIntro": "Gotowe harmonogramy producentów nawozów. Po włączeniu zabiegi trafiają do kalendarza z produktem i dawką dla Twojej powierzchni. Zastępują wtedy standardowy plan nawożenia.",
+  "programsActive": "Aktywny",
+  "programsEnable": "Włącz program",
+  "programsDisable": "Wyłącz program",
+  "programsEnabled": "Program włączony. Zabiegi są w kalendarzu.",
+  "programsDisabled": "Program wyłączony. Wrócił standardowy plan nawożenia.",
+  "programsSource": "Źródło: {brand} ({site}). Programy i dawki są przykładowe, zawsze sprawdź etykietę produktu.",
+  "@programsSource": {"placeholders": {"brand": {"type": "String"}, "site": {"type": "String"}}},
+  "programsWindow": "{from}–{to}",
+  "@programsWindow": {"placeholders": {"from": {"type": "String"}, "to": {"type": "String"}}},
+  "programsDose": "{dose} g/m²",
+  "@programsDose": {"placeholders": {"dose": {"type": "String"}}},
+  "programsFixedNote": "Terminy programu są stałe. Pogoda nie przesuwa ich, najwyżej ostrzega.",
+  "programsCustomTitle": "Własne plany",
+  "programsCreate": "Utwórz własny plan",
+  "programsEdit": "Edytuj",
+  "programsDelete": "Usuń",
+  "programsDeleted": "Plan usunięty.",
+  "customSummary": "{product}, {dose} g/m², co {days}",
+  "@customSummary": {"placeholders": {"product": {"type": "String"}, "dose": {"type": "int"}, "days": {"type": "String"}}},
+  "customFormTitle": "Własny plan nawożenia",
+  "customName": "Nazwa planu",
+  "customProduct": "Nazwa nawozu",
+  "customDose": "Dawka (g/m²)",
+  "customInterval": "Co ile dni",
+  "customStart": "Pierwsze nawożenie",
+  "customSave": "Zapisz plan",
+  "customInvalid": "Podaj nazwę nawozu, dawkę i odstęp w dniach.",
+  "programsControlsDates": "Terminy nawożenia ustawia program: {name}. Odstęp między zabiegami nie jest teraz używany.",
+  "@programsControlsDates": {"placeholders": {"name": {"type": "String"}}}
+}

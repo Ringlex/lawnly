@@ -1,0 +1,19 @@
+name = "lawnly-assistant"
+main = "src/index.ts"
+compatibility_date = "2026-10-01"
+
+# Licznik pytań na instalację i zgłoszenia odpowiedzi.
+# Identyfikator uzupełnia `wrangler kv namespace create QUOTA`.
+[[kv_namespaces]]
+binding = "QUOTA"
+id = "fd3c1e11a65449c0abea7b2be2e6bf97"
+
+# Zapasowy dostawca na darmowym progu Cloudflare, gdy Gemini jest przeciążony.
+[ai]
+binding = "AI"
+
+[vars]
+DAILY_LIMIT = "10"
+
+# Sekrety - `wrangler secret put <NAZWA>`, nigdy w pliku i nigdy w aplikacji:
+#   GEMINI_API_KEY   klucz do modelu, osobny projekt Google niż Pitstop

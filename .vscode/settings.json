@@ -1,0 +1,17 @@
+{
+  "dart.flutterSdkPath": ".fvm/versions/3.41.0",
+  "dart.lineLength": 100,
+  "files.associations": {
+    "**/.dart_tool/version": "plaintext",
+    "**/.fvm/version": "plaintext"
+  },
+  "gradle.autoDetect": "off",
+  "gradle.nestedProjects": false,
+  "java.import.gradle.enabled": false,
+  "java.import.exclusions": ["**/.fvm/**", "**/build/**"],
+  "[dart]": {
+    "editor.rulers": [
+      100
+    ]
+  }
+}
