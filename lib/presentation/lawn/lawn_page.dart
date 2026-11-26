@@ -13,6 +13,7 @@ import 'package:lawnly/data/plan/care_plan.dart';
 import 'package:lawnly/data/programs/program_catalog.dart';
 import 'package:lawnly/domain/plan/care_service.dart';
 import 'package:lawnly/domain/plan/watering_guide.dart';
+import 'package:lawnly/presentation/backup/backup_actions.dart';
 import 'package:lawnly/presentation/calendar/care_kind_style.dart';
 import 'package:lawnly/presentation/common/dimen.dart';
 import 'package:lawnly/presentation/common/form_controls.dart';
@@ -103,6 +104,9 @@ class LawnPage extends StatelessWidget {
                     const NotificationSettingsTile(),
                   ],
                 ),
+                Gap.xLarge,
+                _SectionTitle(strings.backupTitle),
+                const _BackupGroup(),
                 Gap.xLarge,
                 _SectionTitle(strings.lawnAppearance),
                 const _ThemePicker(),
@@ -326,6 +330,30 @@ class _Group extends StatelessWidget {
   }
 }
 
+class _BackupGroup extends StatelessWidget {
+  const _BackupGroup();
+
+  @override
+  Widget build(BuildContext context) {
+    final strings = context.strings;
+
+    return _Group(
+      children: [
+        _SettingRow(
+          label: strings.backupExport,
+          subtitle: strings.backupExportSub,
+          onTap: () => exportBackup(context),
+        ),
+        _SettingRow(
+          label: strings.backupImport,
+          subtitle: strings.backupImportSub,
+          onTap: () => importBackup(context, replacesData: true),
+        ),
+      ],
+    );
+  }
+}
+
 class _ProgramsRow extends StatefulWidget {
   const _ProgramsRow();
 
@@ -375,10 +403,10 @@ class _ProgramsRowState extends State<_ProgramsRow> {
 }
 
 class _SettingRow extends StatelessWidget {
-  const _SettingRow({required this.label, required this.value, required this.onTap, this.subtitle});
+  const _SettingRow({required this.label, required this.onTap, this.value, this.subtitle});
 
   final String label;
-  final String value;
+  final String? value;
   final String? subtitle;
   final VoidCallback onTap;
 
@@ -411,13 +439,16 @@ class _SettingRow extends StatelessWidget {
                   ],
                 ),
               ),
-              Flexible(
-                child: Text(
-                  value,
-                  textAlign: TextAlign.right,
-                  style: context.textTheme.titleSmall?.copyWith(color: palette.secondaryTextColor),
+              if (value != null)
+                Flexible(
+                  child: Text(
+                    value!,
+                    textAlign: TextAlign.right,
+                    style: context.textTheme.titleSmall?.copyWith(
+                      color: palette.secondaryTextColor,
+                    ),
+                  ),
                 ),
-              ),
               Icon(Icons.chevron_right, size: 20, color: palette.mutedTextColor),
             ],
           ),

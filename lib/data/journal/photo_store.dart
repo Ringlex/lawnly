@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:image_picker/image_picker.dart';
 import 'package:lawnly/core/app_logger/app_logger.dart';
@@ -24,6 +25,8 @@ class PhotoStore {
   }
 
   File fileOf(String name) => File('${_directory.path}/$name');
+
+  Future<void> write(String name, Uint8List bytes) => fileOf(name).writeAsBytes(bytes, flush: true);
 
   Future<void> delete(String name) async {
     try {

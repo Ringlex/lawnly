@@ -65,6 +65,14 @@ class NotificationScheduler {
     return saved.enabled == next.enabled;
   }
 
+  Future<void> confirmPermission() async {
+    final prefs = await _prefs.load();
+    if (prefs.enabled && !await _gateway.requestPermission()) {
+      await _prefs.save(prefs.copyWith(enabled: false));
+    }
+    await _apply();
+  }
+
   Future<void> reschedule({
     required CalendarPlan calendar,
     required List<DayForecast> forecast,

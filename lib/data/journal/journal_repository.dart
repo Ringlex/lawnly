@@ -3,6 +3,8 @@ import 'package:lawnly/data/journal/journal_entry.dart';
 import 'package:lawnly/data/local/single_value_store.dart';
 
 class JournalRepository {
+  static const storageKey = 'journal';
+
   const JournalRepository({required SingleValueStore<Journal> store}) : _store = store;
 
   final SingleValueStore<Journal> _store;

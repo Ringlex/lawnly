@@ -3812,6 +3812,114 @@ abstract class L10n {
   /// In pl, this message translates to:
   /// **'Terminy nawożenia ustawia program: {name}. Odstęp między zabiegami nie jest teraz używany.'**
   String programsControlsDates(String name);
+
+  /// No description provided for @backupTitle.
+  ///
+  /// In pl, this message translates to:
+  /// **'Kopia danych'**
+  String get backupTitle;
+
+  /// No description provided for @backupExport.
+  ///
+  /// In pl, this message translates to:
+  /// **'Eksportuj dane'**
+  String get backupExport;
+
+  /// No description provided for @backupExportSub.
+  ///
+  /// In pl, this message translates to:
+  /// **'Plik z trawnikami, dziennikiem i zdjęciami. Zawiera też położenie trawnika.'**
+  String get backupExportSub;
+
+  /// No description provided for @backupImport.
+  ///
+  /// In pl, this message translates to:
+  /// **'Importuj dane'**
+  String get backupImport;
+
+  /// No description provided for @backupImportSub.
+  ///
+  /// In pl, this message translates to:
+  /// **'Przywróć dane z wcześniej zapisanego pliku.'**
+  String get backupImportSub;
+
+  /// No description provided for @backupRestoreFromFile.
+  ///
+  /// In pl, this message translates to:
+  /// **'Przywróć dane z pliku'**
+  String get backupRestoreFromFile;
+
+  /// No description provided for @backupImportTitle.
+  ///
+  /// In pl, this message translates to:
+  /// **'Przywrócić dane?'**
+  String get backupImportTitle;
+
+  /// No description provided for @backupReplaceWarning.
+  ///
+  /// In pl, this message translates to:
+  /// **'Obecne trawniki, plany, dziennik i zdjęcia na tym telefonie zostaną zastąpione. Tej operacji nie można cofnąć.'**
+  String get backupReplaceWarning;
+
+  /// No description provided for @backupRestore.
+  ///
+  /// In pl, this message translates to:
+  /// **'Przywróć'**
+  String get backupRestore;
+
+  /// No description provided for @backupExported.
+  ///
+  /// In pl, this message translates to:
+  /// **'Kopia została zapisana.'**
+  String get backupExported;
+
+  /// No description provided for @backupImported.
+  ///
+  /// In pl, this message translates to:
+  /// **'Dane zostały przywrócone.'**
+  String get backupImported;
+
+  /// No description provided for @backupExportFailed.
+  ///
+  /// In pl, this message translates to:
+  /// **'Nie udało się zapisać kopii.'**
+  String get backupExportFailed;
+
+  /// No description provided for @backupImportFailed.
+  ///
+  /// In pl, this message translates to:
+  /// **'Nie udało się przywrócić danych.'**
+  String get backupImportFailed;
+
+  /// No description provided for @backupInvalidFile.
+  ///
+  /// In pl, this message translates to:
+  /// **'To nie jest poprawna kopia Lawnly albo plik jest uszkodzony.'**
+  String get backupInvalidFile;
+
+  /// No description provided for @backupNewerVersion.
+  ///
+  /// In pl, this message translates to:
+  /// **'Ta kopia pochodzi z nowszej wersji Lawnly. Zaktualizuj aplikację.'**
+  String get backupNewerVersion;
+
+  /// No description provided for @backupNothingToExport.
+  ///
+  /// In pl, this message translates to:
+  /// **'Nie ma jeszcze danych do zapisania.'**
+  String get backupNothingToExport;
+
+  /// No description provided for @backupSummary.
+  ///
+  /// In pl, this message translates to:
+  /// **'Kopia z {date}. Trawniki: {lawns}, zdjęcia: {photos}.'**
+  String backupSummary(String date, int lawns, int photos);
+
+  /// No description provided for @backupCancel.
+  ///
+  /// In pl, this message translates to:
+  /// **'Anuluj'**
+  String get backupCancel;
 }
 
 class _L10nDelegate extends LocalizationsDelegate<L10n> {

@@ -69,11 +69,11 @@ class NotificationPrefsRepository {
 
   final StorageAdapter _adapter;
 
-  static const _key = 'notification_prefs';
+  static const storageKey = 'notification_prefs';
 
   Future<NotificationPrefs> load() async {
     try {
-      final raw = await _adapter.read(key: _key);
+      final raw = await _adapter.read(key: storageKey);
       if (raw == null) return const NotificationPrefs();
       return NotificationPrefs.fromJson(jsonDecode(raw) as Map<String, dynamic>);
     } on Object {
@@ -82,7 +82,7 @@ class NotificationPrefsRepository {
   }
 
   Future<void> save(NotificationPrefs prefs) =>
-      _adapter.write(key: _key, value: jsonEncode(prefs.toJson()));
+      _adapter.write(key: storageKey, value: jsonEncode(prefs.toJson()));
 }
 
 class NotificationState {

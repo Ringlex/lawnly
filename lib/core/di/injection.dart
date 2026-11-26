@@ -1,5 +1,7 @@
 import 'package:lawnly/core/l10n/language_controller.dart';
 import 'package:get_it/get_it.dart';
+import 'package:lawnly/data/backup/backup_file_gateway.dart';
+import 'package:lawnly/domain/backup/backup_service.dart';
 import 'package:lawnly/core/constants/app_const.dart';
 import 'package:lawnly/data/assistant/assistant_client.dart';
 import 'package:lawnly/data/assistant/install_id_store.dart';
@@ -59,7 +61,7 @@ Future<void> configureDependencies() async {
       PlanRepository(
         store: SingleValueStore<CarePlan>(
           adapter: lawnStorage,
-          key: 'care_plan',
+          key: PlanRepository.storageKey,
           fromJson: CarePlan.fromJson,
         ),
       ),
@@ -68,7 +70,7 @@ Future<void> configureDependencies() async {
       JournalRepository(
         store: SingleValueStore<Journal>(
           adapter: lawnStorage,
-          key: 'journal',
+          key: JournalRepository.storageKey,
           fromJson: Journal.fromJson,
         ),
       ),
@@ -94,6 +96,16 @@ Future<void> configureDependencies() async {
     ..registerSingleton(NotificationStateRepository(adapter: getIt()))
     ..registerSingleton(NotificationScheduler(gateway: getIt(), prefs: getIt(), state: getIt()))
     ..registerSingleton(LawnService(directory: getIt(), notifications: getIt()))
+    ..registerSingleton<BackupFileGateway>(const SystemBackupFileGateway())
+    ..registerSingleton(
+      BackupService(
+        storage: getIt(),
+        lawns: getIt(),
+        photos: getIt(),
+        language: getIt(),
+        notifications: getIt(),
+      ),
+    )
     ..registerSingleton(
       AssistantService(
         client: AppConfig.assistantUrl.isEmpty

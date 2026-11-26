@@ -11,7 +11,7 @@ class LanguageController {
     _applyToIntl();
   }
 
-  static const _key = 'app_language';
+  static const storageKey = 'app_language';
 
   final StorageAdapter _adapter;
   final Locale Function() _deviceLocale;
@@ -26,22 +26,31 @@ class LanguageController {
     StorageAdapter adapter, {
     Locale Function()? deviceLocale,
   }) async {
-    String? stored;
-    try {
-      stored = await adapter.read(key: _key);
-    } on Object catch (error) {
-      debugPrint('LanguageController: $error');
-    }
     return LanguageController._(
       adapter,
-      AppLanguage.values.asNameMap()[stored] ?? AppLanguage.system,
+      await _storedPreference(adapter),
       deviceLocale ?? () => WidgetsBinding.instance.platformDispatcher.locale,
     );
   }
 
+  static Future<AppLanguage> _storedPreference(StorageAdapter adapter) async {
+    String? stored;
+    try {
+      stored = await adapter.read(key: storageKey);
+    } on Object catch (error) {
+      debugPrint('LanguageController: $error');
+    }
+    return AppLanguage.values.asNameMap()[stored] ?? AppLanguage.system;
+  }
+
+  Future<void> reload() async {
+    _preference = await _storedPreference(_adapter);
+    _refresh();
+  }
+
   Future<void> select(AppLanguage preference) async {
     _preference = preference;
-    await _adapter.write(key: _key, value: preference.name);
+    await _adapter.write(key: storageKey, value: preference.name);
     _refresh();
   }
 

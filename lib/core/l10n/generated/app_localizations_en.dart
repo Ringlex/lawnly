@@ -2470,4 +2470,63 @@ class L10nEn extends L10n {
   String programsControlsDates(String name) {
     return 'Fertilizing dates are set by the program: $name. The interval between treatments is not used now.';
   }
+
+  @override
+  String get backupTitle => 'Your data';
+
+  @override
+  String get backupExport => 'Export data';
+
+  @override
+  String get backupExportSub =>
+      'A file with your lawns, journal and photos. It also contains your lawn location.';
+
+  @override
+  String get backupImport => 'Import data';
+
+  @override
+  String get backupImportSub => 'Restore data from a previously saved file.';
+
+  @override
+  String get backupRestoreFromFile => 'Restore data from a file';
+
+  @override
+  String get backupImportTitle => 'Restore data?';
+
+  @override
+  String get backupReplaceWarning =>
+      'The lawns, plans, journal and photos currently on this phone will be replaced. This cannot be undone.';
+
+  @override
+  String get backupRestore => 'Restore';
+
+  @override
+  String get backupExported => 'Backup saved.';
+
+  @override
+  String get backupImported => 'Your data has been restored.';
+
+  @override
+  String get backupExportFailed => 'Could not save the backup.';
+
+  @override
+  String get backupImportFailed => 'Could not restore the data.';
+
+  @override
+  String get backupInvalidFile => 'This is not a valid Lawnly backup, or the file is damaged.';
+
+  @override
+  String get backupNewerVersion =>
+      'This backup comes from a newer version of Lawnly. Update the app.';
+
+  @override
+  String get backupNothingToExport => 'There is no data to save yet.';
+
+  @override
+  String backupSummary(String date, int lawns, int photos) {
+    return 'Backup from $date. Lawns: $lawns, photos: $photos.';
+  }
+
+  @override
+  String get backupCancel => 'Cancel';
 }

@@ -11,7 +11,7 @@ class LawnDirectory {
 
   static const mainId = 'main';
   static const profileKey = 'lawn_profile';
-  static const _indexKey = 'lawn_index';
+  static const indexKey = 'lawn_index';
 
   final StorageAdapter _adapter;
   final List<String> _ids;
@@ -19,9 +19,19 @@ class LawnDirectory {
 
   ValueListenable<String> get activeId => _activeId;
 
+  List<String> get ids => List.unmodifiable(_ids);
+
+  Future<void> reload() async {
+    final stored = await load(_adapter);
+    _ids
+      ..clear()
+      ..addAll(stored._ids);
+    _activeId.value = stored._activeId.value;
+  }
+
   static Future<LawnDirectory> load(StorageAdapter adapter) async {
     try {
-      final raw = await adapter.read(key: _indexKey);
+      final raw = await adapter.read(key: indexKey);
       if (raw != null) {
         final json = jsonDecode(raw) as Map<String, dynamic>;
         final ids = (json['ids'] as List<dynamic>).cast<String>().toList();
@@ -72,5 +82,5 @@ class LawnDirectory {
   }
 
   Future<void> _persist(List<String> ids, String activeId) =>
-      _adapter.write(key: _indexKey, value: jsonEncode({'ids': ids, 'activeId': activeId}));
+      _adapter.write(key: indexKey, value: jsonEncode({'ids': ids, 'activeId': activeId}));
 }

@@ -10,6 +10,7 @@ import 'package:lawnly/core/theme/app_theme.dart';
 import 'package:lawnly/data/lawn/lawn_profile.dart';
 import 'package:lawnly/data/lawn/lawn_repository.dart';
 import 'package:lawnly/domain/lawn/lawn_service.dart';
+import 'package:lawnly/presentation/backup/backup_actions.dart';
 import 'package:lawnly/presentation/common/dimen.dart';
 import 'package:lawnly/presentation/onboarding/onboarding_cubit.dart';
 import 'package:lawnly/presentation/onboarding/onboarding_state.dart';
@@ -54,6 +55,9 @@ class _OnboardingViewState extends State<_OnboardingView> {
     _pageController.dispose();
     super.dispose();
   }
+
+  bool _canRestoreBackup(OnboardingState state) =>
+      widget.onClose == null && state.step == 0 && state.status == OnboardingStatus.editing;
 
   bool _canSkipRest(OnboardingState state) =>
       state.status == OnboardingStatus.editing &&
@@ -120,6 +124,11 @@ class _OnboardingViewState extends State<_OnboardingView> {
                     spacing: Insets.xSmall,
                     children: [
                       _NextButton(state: state, onPressed: cubit.next),
+                      if (_canRestoreBackup(state))
+                        TextButton(
+                          onPressed: () => importBackup(context, replacesData: false),
+                          child: Text(context.strings.backupRestoreFromFile),
+                        ),
                       if (_canSkipRest(state))
                         TextButton(
                           onPressed: cubit.finishWithDefaults,

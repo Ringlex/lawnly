@@ -2479,4 +2479,63 @@ class L10nPl extends L10n {
   String programsControlsDates(String name) {
     return 'Terminy nawożenia ustawia program: $name. Odstęp między zabiegami nie jest teraz używany.';
   }
+
+  @override
+  String get backupTitle => 'Kopia danych';
+
+  @override
+  String get backupExport => 'Eksportuj dane';
+
+  @override
+  String get backupExportSub =>
+      'Plik z trawnikami, dziennikiem i zdjęciami. Zawiera też położenie trawnika.';
+
+  @override
+  String get backupImport => 'Importuj dane';
+
+  @override
+  String get backupImportSub => 'Przywróć dane z wcześniej zapisanego pliku.';
+
+  @override
+  String get backupRestoreFromFile => 'Przywróć dane z pliku';
+
+  @override
+  String get backupImportTitle => 'Przywrócić dane?';
+
+  @override
+  String get backupReplaceWarning =>
+      'Obecne trawniki, plany, dziennik i zdjęcia na tym telefonie zostaną zastąpione. Tej operacji nie można cofnąć.';
+
+  @override
+  String get backupRestore => 'Przywróć';
+
+  @override
+  String get backupExported => 'Kopia została zapisana.';
+
+  @override
+  String get backupImported => 'Dane zostały przywrócone.';
+
+  @override
+  String get backupExportFailed => 'Nie udało się zapisać kopii.';
+
+  @override
+  String get backupImportFailed => 'Nie udało się przywrócić danych.';
+
+  @override
+  String get backupInvalidFile => 'To nie jest poprawna kopia Lawnly albo plik jest uszkodzony.';
+
+  @override
+  String get backupNewerVersion =>
+      'Ta kopia pochodzi z nowszej wersji Lawnly. Zaktualizuj aplikację.';
+
+  @override
+  String get backupNothingToExport => 'Nie ma jeszcze danych do zapisania.';
+
+  @override
+  String backupSummary(String date, int lawns, int photos) {
+    return 'Kopia z $date. Trawniki: $lawns, zdjęcia: $photos.';
+  }
+
+  @override
+  String get backupCancel => 'Anuluj';
 }
