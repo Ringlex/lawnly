@@ -10,8 +10,7 @@ void main() {
     establishedOn: DateTime(2024, 4, 1),
   );
 
-  test('po podstawach plan da się utworzyć bez gleby, mieszanki i nawożenia',
-      () {
+  test('po podstawach plan da się utworzyć bez gleby, mieszanki i nawożenia', () {
     expect(minimal.isStepComplete(0), isTrue);
     expect(minimal.isStepComplete(1), isTrue);
     expect(minimal.isStepComplete(2), isTrue);

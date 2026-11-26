@@ -17,28 +17,26 @@ void main() {
   CareEntry entry(CareKind kind, DateTime date) =>
       CareEntry(kind: kind, date: date, certainty: EntryCertainty.matched);
 
-  DayForecast day(DateTime date, {double? minTemp, double rain = 0}) =>
-      DayForecast(
-        date: date,
-        kind: WeatherKind.clear,
-        maxTempC: 18,
-        rainMm: rain,
-        maxWindKmh: 5,
-        minTempC: minTemp,
-      );
+  DayForecast day(DateTime date, {double? minTemp, double rain = 0}) => DayForecast(
+    date: date,
+    kind: WeatherKind.clear,
+    maxTempC: 18,
+    rainMm: rain,
+    maxWindKmh: 5,
+    minTempC: minTemp,
+  );
 
   List<PlannedNotification> run({
     NotificationPrefs prefs = const NotificationPrefs(enabled: true),
     List<CareEntry> entries = const [],
     List<DayForecast> forecast = const [],
-  }) =>
-      planner.plan(
-        prefs: prefs,
-        calendar: CalendarPlan(entries: entries, windows: const []),
-        forecast: forecast,
-        now: now,
-        strings: strings,
-      );
+  }) => planner.plan(
+    prefs: prefs,
+    calendar: CalendarPlan(entries: entries, windows: const []),
+    forecast: forecast,
+    now: now,
+    strings: strings,
+  );
 
   test('wyłączone powiadomienia nic nie planują', () {
     final result = run(
@@ -49,19 +47,13 @@ void main() {
     expect(result, isEmpty);
   });
 
-  test(
-      'najwyżej jedno poranne powiadomienie dziennie, nawożenie ma pierwszeństwo',
-      () {
+  test('najwyżej jedno poranne powiadomienie dziennie, nawożenie ma pierwszeństwo', () {
     final result = run(
-      entries: [
-        entry(CareKind.watering, tomorrow),
-        entry(CareKind.fertilizing, tomorrow)
-      ],
+      entries: [entry(CareKind.watering, tomorrow), entry(CareKind.fertilizing, tomorrow)],
     );
 
     expect(result, hasLength(1));
-    expect(result.single.at,
-        DateTime(2026, 5, 11, NotificationPrefs.defaultMorningHour));
+    expect(result.single.at, DateTime(2026, 5, 11, NotificationPrefs.defaultMorningHour));
     expect(result.single.payload, '2026-05-11');
   });
 
@@ -75,29 +67,27 @@ void main() {
   });
 
   CareEntry programEntry(DateTime date) => CareEntry(
-        kind: CareKind.fertilizing,
-        date: date,
-        certainty: EntryCertainty.matched,
-        task: PlannedTask(
-          id: 'program:icl-one:step:2026',
-          kind: CareKind.fertilizing,
-          date: date,
-          flexible: false,
-          note: 'Nawóz X · 30 g/m² × 100 m² = 3,0 kg\nŹródło: example.pl',
-        ),
-      );
+    kind: CareKind.fertilizing,
+    date: date,
+    certainty: EntryCertainty.matched,
+    task: PlannedTask(
+      id: 'program:icl-one:step:2026',
+      kind: CareKind.fertilizing,
+      date: date,
+      flexible: false,
+      note: 'Nawóz X · 30 g/m² × 100 m² = 3,0 kg\nŹródło: example.pl',
+    ),
+  );
 
   test('krok programu podaje produkt, dawkę i ilość', () {
-    final result =
-        run(entries: [programEntry(tomorrow)], forecast: [day(tomorrow)]);
+    final result = run(entries: [programEntry(tomorrow)], forecast: [day(tomorrow)]);
 
     expect(result.single.title, strings.notifProgramTitle);
     expect(result.single.body, 'Nawóz X · 30 g/m² × 100 m² = 3,0 kg');
   });
 
   test('krok programu ostrzega przed ulewnym deszczem w dniu zabiegu', () {
-    final result = run(
-        entries: [programEntry(tomorrow)], forecast: [day(tomorrow, rain: 12)]);
+    final result = run(entries: [programEntry(tomorrow)], forecast: [day(tomorrow, rain: 12)]);
 
     expect(result.single.body, contains('Nawóz X'));
     expect(result.single.body, contains(strings.notifProgramRain(12)));
@@ -121,8 +111,7 @@ void main() {
   });
 
   test('godzina poranna jest ograniczona do godzin poza ciszą nocną', () {
-    final prefs =
-        NotificationPrefs.fromJson({'enabled': true, 'morningHour': 23});
+    final prefs = NotificationPrefs.fromJson({'enabled': true, 'morningHour': 23});
 
     expect(prefs.morningHour, NotificationPrefs.quietFromHour - 1);
   });

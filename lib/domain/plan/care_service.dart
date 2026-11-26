@@ -75,7 +75,8 @@ class CareService {
     final profile = (await _lawnRepository.profile().run()).toNullable();
     if (profile == null) return left(CareFailure.noProfile);
 
-    final plan = await _withProgramTasks(await _planRepository.plan().run(), profile);
+    final stored = await _translatedProgramNotes(await _planRepository.plan().run(), profile);
+    final plan = await _withProgramTasks(stored, profile);
     final report = await _report(profile.location);
     return report.map(
       (report) => CareSnapshot(
@@ -299,6 +300,8 @@ class CareService {
   Future<bool> deleteTask(String id) =>
       _updatePlan((plan) => plan.copyWith(tasks: plan.tasks.where((t) => t.id != id).toList()));
 
+  void refresh() => _changes.add(null);
+
   Future<void> dispose() => _changes.close();
 
   List<PlannedTask> _missingProgramTasks(CarePlan plan, LawnProfile profile) {
@@ -328,6 +331,22 @@ class CareService {
       today: DateTime.now(),
       existingIds: existingIds,
     );
+  }
+
+  Future<CarePlan> _translatedProgramNotes(CarePlan plan, LawnProfile profile) async {
+    final program = programById(plan.activeProgramId);
+    if (program == null) return plan;
+
+    final tasks = _programs.translatedNotes(
+      program: program,
+      areaSqm: profile.areaSqm,
+      tasks: plan.tasks,
+    );
+    if (const ListEquality<PlannedTask>().equals(tasks, plan.tasks)) return plan;
+
+    final updated = plan.copyWith(tasks: tasks);
+    final saved = await _planRepository.save(updated).run();
+    return saved.isRight() ? updated : plan;
   }
 
   Future<CarePlan> _withProgramTasks(CarePlan plan, LawnProfile profile) async {

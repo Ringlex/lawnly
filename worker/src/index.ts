@@ -9,7 +9,7 @@ import type { Env } from './env';
 import { geminiProvider } from './gemini';
 import { firstAnswer, type ModelRequest } from './model';
 import { privacyPage } from './privacy';
-import { ASK_SYSTEM, DIAGNOSIS_SYSTEM } from './prompts';
+import { ASK_SYSTEM, DIAGNOSIS_SYSTEM, inLanguage } from './prompts';
 import { handleReport } from './report';
 import { ASK_SCHEMA, DIAGNOSIS_SCHEMA } from './schemas';
 import { json, sha256 } from './util';
@@ -166,7 +166,7 @@ function buildDiagnosisRequest(body: Record<string, unknown>): ModelRequest {
     .filter(Boolean)
     .join('\n\n');
 
-  return { system: DIAGNOSIS_SYSTEM, text, images, schema: DIAGNOSIS_SCHEMA };
+  return { system: inLanguage(DIAGNOSIS_SYSTEM, body.language), text, images, schema: DIAGNOSIS_SCHEMA };
 }
 
 function buildAskRequest(body: Record<string, unknown>): ModelRequest {
@@ -187,7 +187,7 @@ function buildAskRequest(body: Record<string, unknown>): ModelRequest {
     .filter(Boolean)
     .join('\n\n');
 
-  return { system: ASK_SYSTEM, text, images, schema: ASK_SCHEMA };
+  return { system: inLanguage(ASK_SYSTEM, body.language), text, images, schema: ASK_SCHEMA };
 }
 
 // --- wywołanie modelu --------------------------------------------------------

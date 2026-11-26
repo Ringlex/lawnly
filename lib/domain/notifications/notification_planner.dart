@@ -70,8 +70,7 @@ class NotificationPlanner {
       final warning = _warning(forecast, date, strings);
       if (warning == null) continue;
       final eve = date.subtract(const Duration(days: 1));
-      final at =
-          DateTime(eve.year, eve.month, eve.day, warningHour, warningMinute);
+      final at = DateTime(eve.year, eve.month, eve.day, warningHour, warningMinute);
       if (at.isAfter(now)) {
         result.add(
           PlannedNotification(
@@ -96,9 +95,7 @@ class NotificationPlanner {
   ) {
     final entries = [
       for (final entry in calendar.on(date))
-        if (entry.certainty != EntryCertainty.done &&
-            _allowed(prefs, entry.kind))
-          entry,
+        if (entry.certainty != EntryCertainty.done && _allowed(prefs, entry.kind)) entry,
     ];
     if (entries.isEmpty) return null;
 
@@ -111,22 +108,16 @@ class NotificationPlanner {
 
     return switch (entry.kind) {
       CareKind.fertilizing => switch (entry.advice) {
-          FertilizeOn(:final conditions, :final cycleDay, :final interval) => (
-              conditions == DayConditions.ideal
-                  ? strings.notifFertilizeIdealTitle
-                  : strings.notifFertilizeTitle,
-              strings.notifFertilizeBody(cycleDay, interval),
-            ),
-          _ => (
-              strings.notifFertilizeTitle,
-              strings.notifFertilizeFallbackBody
-            ),
-        },
-      CareKind.mowing => (strings.notifMowingTitle, strings.notifMowingBody),
-      CareKind.watering => (
-          strings.notifWateringTitle,
-          strings.notifWateringBody
+        FertilizeOn(:final conditions, :final cycleDay, :final interval) => (
+          conditions == DayConditions.ideal
+              ? strings.notifFertilizeIdealTitle
+              : strings.notifFertilizeTitle,
+          strings.notifFertilizeBody(cycleDay, interval),
         ),
+        _ => (strings.notifFertilizeTitle, strings.notifFertilizeFallbackBody),
+      },
+      CareKind.mowing => (strings.notifMowingTitle, strings.notifMowingBody),
+      CareKind.watering => (strings.notifWateringTitle, strings.notifWateringBody),
       _ => (strings.notifTaskTitle, strings.notifTaskBody),
     };
   }
@@ -140,8 +131,7 @@ class NotificationPlanner {
     final summary = (task.note ?? '').split('\n').first.trim();
     final rain = _rainOn(forecast, date);
     final body = switch ((summary.isEmpty, rain)) {
-      (true, final mm?) when mm >= washoutMm =>
-        strings.notifProgramRain(mm.round()),
+      (true, final mm?) when mm >= washoutMm => strings.notifProgramRain(mm.round()),
       (true, _) => strings.notifFertilizeFallbackBody,
       (false, final mm?) when mm >= washoutMm =>
         '$summary. ${strings.notifProgramRain(mm.round())}',
@@ -157,8 +147,7 @@ class NotificationPlanner {
     return null;
   }
 
-  (String, String)? _warning(
-      List<DayForecast> forecast, DateTime date, L10n strings) {
+  (String, String)? _warning(List<DayForecast> forecast, DateTime date, L10n strings) {
     for (final day in forecast) {
       if (CarePlanner.dateOnly(day.date) != date) continue;
       final minTemp = day.minTempC;
@@ -177,25 +166,23 @@ class NotificationPlanner {
       if (day.rainMm >= downpourMm) {
         return (
           strings.noticeDownpourTitle,
-          strings.noticeDownpourBody(
-              strings.noticeTomorrow, day.rainMm.round().toString()),
+          strings.noticeDownpourBody(strings.noticeTomorrow, day.rainMm.round().toString()),
         );
       }
     }
     return null;
   }
 
-  static bool _allowed(NotificationPrefs prefs, CareKind kind) =>
-      switch (kind) {
-        CareKind.fertilizing => prefs.fertilizing,
-        CareKind.watering => prefs.watering,
-        _ => prefs.care,
-      };
+  static bool _allowed(NotificationPrefs prefs, CareKind kind) => switch (kind) {
+    CareKind.fertilizing => prefs.fertilizing,
+    CareKind.watering => prefs.watering,
+    _ => prefs.care,
+  };
 
   static int _priority(CareKind kind) => switch (kind) {
-        CareKind.fertilizing => 0,
-        CareKind.mowing => 1,
-        CareKind.watering => 3,
-        _ => 2,
-      };
+    CareKind.fertilizing => 0,
+    CareKind.mowing => 1,
+    CareKind.watering => 3,
+    _ => 2,
+  };
 }

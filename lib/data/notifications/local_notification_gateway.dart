@@ -1,3 +1,4 @@
+import 'package:lawnly/core/l10n/current_l10n.dart';
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
@@ -15,7 +16,6 @@ class LocalNotificationGateway extends NotificationGateway {
   final _selections = StreamController<String>.broadcast();
 
   static const _channelId = 'care';
-  static const _channelName = 'Pielęgnacja trawnika';
   static const _icon = '@mipmap/ic_launcher';
 
   var _ready = false;
@@ -78,14 +78,14 @@ class LocalNotificationGateway extends NotificationGateway {
         title: notification.title,
         body: notification.body,
         scheduledDate: tz.TZDateTime.from(notification.at, tz.local),
-        notificationDetails: const NotificationDetails(
+        notificationDetails: NotificationDetails(
           android: AndroidNotificationDetails(
             _channelId,
-            _channelName,
+            currentL10n().notifChannelName,
             importance: Importance.defaultImportance,
             priority: Priority.defaultPriority,
           ),
-          iOS: DarwinNotificationDetails(),
+          iOS: const DarwinNotificationDetails(),
         ),
         androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
         payload: notification.payload,

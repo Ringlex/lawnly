@@ -714,6 +714,13 @@
       }
     }
   },
+  "languageTitle": "Język",
+  "languageSystem": "Systemowy",
+  "notifChannelName": "Pielęgnacja trawnika",
+  "programNoteAverage": "średnio {value}",
+  "@programNoteAverage": {"placeholders": {"value": {"type": "String"}}},
+  "programNoteSource": "Źródło: {site}",
+  "@programNoteSource": {"placeholders": {"site": {"type": "String"}}},
   "lawnTitle": "Trawnik",
   "lawnsTitle": "Twoje trawniki",
   "lawnsOpen": "Zmień lub dodaj trawnik",

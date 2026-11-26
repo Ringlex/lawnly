@@ -1,3 +1,4 @@
+import 'package:lawnly/core/l10n/current_l10n.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:lawnly/data/assistant/assistant_client.dart';
@@ -150,6 +151,7 @@ class AssistantService {
         '${month.toString().padLeft(2, '0')}-${day.toString().padLeft(2, '0')}';
 
     return {
+      'language': currentLanguageCode,
       'today': day(today),
       if (profile != null) 'lawn': _lawn(profile, day, monthDay),
       'weather': {
@@ -202,33 +204,15 @@ class AssistantService {
   };
 
   static String _journalTitle(JournalEntry entry) {
-    const kinds = {
-      CareKind.fertilizing: 'nawożenie',
-      CareKind.mowing: 'koszenie',
-      CareKind.watering: 'podlewanie',
-      CareKind.aeration: 'aeracja',
-      CareKind.scarification: 'wertykulacja',
-      CareKind.overseeding: 'dosiewanie',
-      CareKind.liming: 'wapnowanie',
-      CareKind.other: 'inny zabieg',
-    };
-    const tags = {
-      ObservationTag.moss: 'mech',
-      ObservationTag.weeds: 'chwasty',
-      ObservationTag.yellowPatches: 'żółte plamy',
-      ObservationTag.bareSpots: 'łyse miejsca',
-      ObservationTag.grubs: 'pędraki',
-      ObservationTag.molehill: 'kretowisko',
-    };
+    final strings = currentL10n();
     final note = entry.note?.trim();
+    final kind = switch (entry.kind) {
+      JournalKind.care when entry.careKind != null => strings.careKind(entry.careKind!.name),
+      _ => strings.journalKind(entry.kind.name),
+    };
     final parts = <String>[
-      switch (entry.kind) {
-        JournalKind.care => kinds[entry.careKind] ?? 'zabieg',
-        JournalKind.observation => 'obserwacja',
-        JournalKind.photo => 'zdjęcie',
-        JournalKind.measurement => 'pomiar pH',
-      },
-      ...entry.tags.map((tag) => tags[tag]!),
+      kind.toLowerCase(),
+      for (final tag in entry.tags) strings.observationTag(tag.name).toLowerCase(),
       if (entry.ph case final ph?) 'pH $ph',
       ?entry.product,
       if (entry.npk case final npk?) 'NPK $npk',

@@ -998,6 +998,25 @@ class L10nPl extends L10n {
   }
 
   @override
+  String get languageTitle => 'Język';
+
+  @override
+  String get languageSystem => 'Systemowy';
+
+  @override
+  String get notifChannelName => 'Pielęgnacja trawnika';
+
+  @override
+  String programNoteAverage(String value) {
+    return 'średnio $value';
+  }
+
+  @override
+  String programNoteSource(String site) {
+    return 'Źródło: $site';
+  }
+
+  @override
   String get lawnTitle => 'Trawnik';
 
   @override

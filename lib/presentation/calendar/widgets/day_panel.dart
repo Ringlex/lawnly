@@ -53,8 +53,7 @@ class DayPanel extends StatelessWidget {
               Text(
                 day.rainFromHour == null
                     ? context.weatherSummary(day)
-                    : strings.weatherRainFrom(
-                        day.maxTempC.round(), day.rainFromHour!),
+                    : strings.weatherRainFrom(day.maxTempC.round(), day.rainFromHour!),
                 style: AppTheme.body(
                   fontSize: 13,
                   fontWeight: FontWeight.w600,
@@ -65,8 +64,7 @@ class DayPanel extends StatelessWidget {
         if (entries.isEmpty)
           Padding(
             padding: const EdgeInsets.symmetric(vertical: Insets.medium),
-            child: Text(strings.calendarEmptyDay,
-                style: context.textTheme.bodyMedium),
+            child: Text(strings.calendarEmptyDay, style: context.textTheme.bodyMedium),
           )
         else
           for (final entry in entries)
@@ -102,29 +100,28 @@ String entrySubtitle(
 
   return switch (entry.kind) {
     CareKind.fertilizing => switch (entry) {
-        CareEntry(certainty: EntryCertainty.fixed) => strings.entryPinned,
-        CareEntry(advice: FertilizeOn(:final cycleDay, :final interval)) =>
-          strings.homeCycleDay(
-            cycleDay,
-            interval,
-          ),
-        CareEntry(:final cycle?) => strings.entryTentative(
-            context.shortDate(cycle.window.start),
-            context.shortDate(cycle.window.end),
-          ),
-        _ => strings.entryOwn,
-      },
-    CareKind.mowing => (forecast?.rainFromHour ?? 0) >= 12
-        ? strings.entryBeforeRain
-        : strings.entryEvery(strings.daysCount(profile.mowingIntervalDays)),
+      CareEntry(certainty: EntryCertainty.fixed) => strings.entryPinned,
+      CareEntry(advice: FertilizeOn(:final cycleDay, :final interval)) => strings.homeCycleDay(
+        cycleDay,
+        interval,
+      ),
+      CareEntry(:final cycle?) => strings.entryTentative(
+        context.shortDate(cycle.window.start),
+        context.shortDate(cycle.window.end),
+      ),
+      _ => strings.entryOwn,
+    },
+    CareKind.mowing =>
+      (forecast?.rainFromHour ?? 0) >= 12
+          ? strings.entryBeforeRain
+          : strings.entryEvery(strings.daysCount(profile.mowingIntervalDays)),
     CareKind.watering => wateringHint(context, profile),
     _ => strings.entryOwn,
   };
 }
 
 class EntryRow extends StatelessWidget {
-  const EntryRow(
-      {required this.entry, required this.subtitle, this.tag, super.key});
+  const EntryRow({required this.entry, required this.subtitle, this.tag, super.key});
 
   final CareEntry entry;
   final String subtitle;
@@ -143,8 +140,7 @@ class EntryRow extends StatelessWidget {
       ),
       onClosed: (task) {
         if (task != null && context.mounted) {
-          showAddTaskSheet(context,
-              cubit: cubit, task: task, initialDate: task.date);
+          showAddTaskSheet(context, cubit: cubit, task: task, initialDate: task.date);
         }
       },
       closedBuilder: _content,
@@ -168,8 +164,7 @@ class EntryRow extends StatelessWidget {
         borderRadius: radius,
         onTap: onTap,
         child: Padding(
-          padding: const EdgeInsets.symmetric(
-              horizontal: 14, vertical: Insets.medium),
+          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: Insets.medium),
           child: Row(
             spacing: Insets.medium,
             children: [
@@ -205,14 +200,12 @@ class EntryRow extends StatelessWidget {
                       subtitle,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      style: AppTheme.body(fontSize: 13)
-                          .copyWith(color: palette.mutedTextColor),
+                      style: AppTheme.body(fontSize: 13).copyWith(color: palette.mutedTextColor),
                     ),
                   ],
                 ),
               ),
-              Icon(Icons.chevron_right,
-                  size: 20, color: palette.mutedTextColor),
+              Icon(Icons.chevron_right, size: 20, color: palette.mutedTextColor),
             ],
           ),
         ),
@@ -231,8 +224,7 @@ class _Tag extends StatelessWidget {
     final palette = context.palette;
 
     return Container(
-      padding:
-          const EdgeInsets.symmetric(horizontal: Insets.small, vertical: 3),
+      padding: const EdgeInsets.symmetric(horizontal: Insets.small, vertical: 3),
       decoration: BoxDecoration(
         color: palette.windowColor,
         borderRadius: BorderRadius.circular(999),

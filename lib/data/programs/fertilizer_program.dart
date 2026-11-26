@@ -1,3 +1,4 @@
+import 'package:lawnly/core/l10n/localized_text.dart';
 import 'package:lawnly/data/plan/care_plan.dart';
 
 class ProgramStep {
@@ -13,7 +14,7 @@ class ProgramStep {
   });
 
   final String id;
-  final String product;
+  final LocalizedText product;
   final int fromMonth;
   final int toMonth;
   final CareKind kind;
@@ -21,7 +22,7 @@ class ProgramStep {
   final int? doseFrom;
   final int? doseTo;
 
-  final String? note;
+  final LocalizedText? note;
 
   bool get hasDose => doseFrom != null;
 
@@ -39,8 +40,8 @@ class FertilizerProgram {
 
   final String id;
   final String brand;
-  final String name;
-  final String summary;
+  final LocalizedText name;
+  final LocalizedText summary;
   final List<ProgramStep> steps;
 }
 

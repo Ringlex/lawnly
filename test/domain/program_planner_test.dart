@@ -10,8 +10,7 @@ void main() {
   final premium = programById('icl-overseed-premium')!;
 
   List<PlannedTask> plan(DateTime today, {Set<String> existing = const {}}) =>
-      planner.missingTasks(
-          program: premium, areaSqm: 250, today: today, existingIds: existing);
+      planner.missingTasks(program: premium, areaSqm: 250, today: today, existingIds: existing);
 
   test('liczba nawożeń w programie zgadza się z jego opisem', () {
     const expected = {
@@ -26,8 +25,7 @@ void main() {
     };
 
     for (final MapEntry(key: id, value: count) in expected.entries) {
-      final fertilizing =
-          programById(id)!.steps.where((s) => s.kind == CareKind.fertilizing);
+      final fertilizing = programById(id)!.steps.where((s) => s.kind == CareKind.fertilizing);
 
       expect(fertilizing, hasLength(count), reason: id);
     }
@@ -70,15 +68,14 @@ void main() {
     expect(tasks, hasLength(3));
     expect(tasks.last.date.month, DateTime.july);
     expect(
-        tasks.first.note,
-        startsWith(
-            'YaraMila Complex · 25–30 g/m² (średnio 27,5) × 100 m² = 2,8 kg'));
+      tasks.first.note,
+      startsWith('YaraMila Complex · 25–30 g/m² (średnio 27,5) × 100 m² = 2,8 kg'),
+    );
   });
 
   test('zabiegi w przyszłości lądują w środku okna', () {
     final tasks = plan(DateTime(2026, 2, 1));
-    final maintenance =
-        tasks.firstWhere((t) => t.id.endsWith(':maintenance:2026'));
+    final maintenance = tasks.firstWhere((t) => t.id.endsWith(':maintenance:2026'));
 
     expect(maintenance.date, DateTime(2026, 3, 31));
     expect(maintenance.kind, CareKind.fertilizing);
@@ -94,15 +91,13 @@ void main() {
   test('zabieg, którego okno minęło, przechodzi na kolejny rok', () {
     final tasks = plan(DateTime(2026, 10, 30));
 
-    expect(tasks.firstWhere((t) => t.id.endsWith(':maintenance:2027')).date,
-        DateTime(2027, 3, 31));
+    expect(tasks.firstWhere((t) => t.id.endsWith(':maintenance:2027')).date, DateTime(2027, 3, 31));
     expect(tasks.where((t) => t.id.endsWith(':prewinter:2026')), isEmpty);
   });
 
   test('istniejące zabiegi nie są dublowane', () {
     final first = plan(DateTime(2026, 2, 1));
-    final again =
-        plan(DateTime(2026, 2, 1), existing: {for (final t in first) t.id});
+    final again = plan(DateTime(2026, 2, 1), existing: {for (final t in first) t.id});
 
     expect(again, isEmpty);
   });
@@ -110,17 +105,12 @@ void main() {
   test('notatka zawiera produkt, dawkę i ilość dla powierzchni', () {
     final tasks = plan(DateTime(2026, 2, 1));
     final allRound = tasks.firstWhere((t) => t.id.endsWith(':allround:2026'));
-    final sowing =
-        tasks.firstWhere((t) => t.id.endsWith(':overseed-spring:2026'));
+    final sowing = tasks.firstWhere((t) => t.id.endsWith(':overseed-spring:2026'));
 
-    expect(
-      allRound.note,
-      startsWith('Landscaper Pro All Round · 45 g/m² × 250 m² = 11,3 kg'),
-    );
+    expect(allRound.note, startsWith('Landscaper Pro All Round · 45 g/m² × 250 m² = 11,3 kg'));
     expect(allRound.note, endsWith('Źródło: icl-growingsolutions.com'));
     expect(sowing.kind, CareKind.overseeding);
-    expect(sowing.note,
-        'Dosiewka nasion Landscaper Pro\nŹródło: icl-growingsolutions.com');
+    expect(sowing.note, 'Dosiewka nasion Landscaper Pro\nŹródło: icl-growingsolutions.com');
   });
 
   test('zabiegi programu da się odróżnić od własnych zadań', () {
@@ -167,7 +157,6 @@ void main() {
       DateTime(2026, 10, 28),
     ]);
     expect(tasks.first.note, 'Nawóz X · 30 g/m² × 100 m² = 3,0 kg');
-    expect(tasks.every((t) => !t.flexible && ProgramPlanner.isProgramTask(t)),
-        isTrue);
+    expect(tasks.every((t) => !t.flexible && ProgramPlanner.isProgramTask(t)), isTrue);
   });
 }
