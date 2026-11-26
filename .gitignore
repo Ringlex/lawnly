@@ -55,3 +55,6 @@ app.*.map.json
 /.claude/
 /.agents/
 /skills-lock.json
+
+# Google Play listing materials
+/store/

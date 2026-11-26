@@ -79,7 +79,7 @@ class LawnPage extends StatelessWidget {
                       label: strings.lawnData,
                       value: [
                         grassMixShortLabel(context, profile.grassMix),
-                        '${strings.lawnSoil.toLowerCase()} ${soilLabel(context, profile.soil).toLowerCase()}',
+                        strings.lawnSoilSummary(soilLabel(context, profile.soil).toLowerCase()),
                       ].join(', '),
                       onTap: () => _push(context, const LawnDataPage()),
                     ),

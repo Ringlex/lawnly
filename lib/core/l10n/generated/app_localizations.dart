@@ -1767,6 +1767,12 @@ abstract class L10n {
   /// **'Ustawienia trawnika'**
   String get lawnSettings;
 
+  /// No description provided for @lawnSoilSummary.
+  ///
+  /// In pl, this message translates to:
+  /// **'gleba {soil}'**
+  String lawnSoilSummary(String soil);
+
   /// No description provided for @lawnData.
   ///
   /// In pl, this message translates to:

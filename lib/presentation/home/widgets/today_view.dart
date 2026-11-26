@@ -391,7 +391,7 @@ class _DayTile extends StatelessWidget {
           ).copyWith(color: labelColor),
         ),
         Text(
-          '${day.date.day}.${day.date.month.toString().padLeft(2, '0')}',
+          context.shortDate(day.date),
           style: AppTheme.body(fontSize: 11).copyWith(color: mutedColor, height: 1),
         ),
         Icon(day.kind.icon, size: 24, color: iconColor),

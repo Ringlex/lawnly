@@ -1073,6 +1073,11 @@ class L10nEn extends L10n {
   String get lawnSettings => 'Lawn settings';
 
   @override
+  String lawnSoilSummary(String soil) {
+    return '$soil soil';
+  }
+
+  @override
   String get lawnData => 'Lawn details';
 
   @override

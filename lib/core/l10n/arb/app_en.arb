@@ -279,6 +279,7 @@
   "lawnLastMowed": "Mowed",
   "lawnObservations": "{count, plural, =1{1 observation to check} other{{count} observations to check}}: {tags}",
   "lawnSettings": "Lawn settings",
+  "lawnSoilSummary": "{soil} soil",
   "lawnData": "Lawn details",
   "lawnCare": "Care",
   "lawnCalibration": "Sprinkler calibration",

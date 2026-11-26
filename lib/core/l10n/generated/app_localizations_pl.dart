@@ -1080,6 +1080,11 @@ class L10nPl extends L10n {
   String get lawnSettings => 'Ustawienia trawnika';
 
   @override
+  String lawnSoilSummary(String soil) {
+    return 'gleba $soil';
+  }
+
+  @override
   String get lawnData => 'Dane trawnika';
 
   @override

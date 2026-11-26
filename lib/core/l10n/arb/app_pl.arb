@@ -765,6 +765,8 @@
     }
   },
   "lawnSettings": "Ustawienia trawnika",
+  "lawnSoilSummary": "gleba {soil}",
+  "@lawnSoilSummary": {"placeholders": {"soil": {"type": "String"}}},
   "lawnData": "Dane trawnika",
   "lawnCare": "Pielęgnacja",
   "lawnCalibration": "Kalibracja zraszacza",
