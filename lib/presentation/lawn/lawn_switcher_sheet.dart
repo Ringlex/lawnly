@@ -51,7 +51,9 @@ Future<void> showLawnSwitcher(BuildContext context) async {
   if (action == null || !context.mounted) return;
 
   void push(Widget page) => Navigator.of(context).push(
-    MaterialPageRoute<void>(builder: (_) => BlocProvider.value(value: cubit, child: page)),
+    MaterialPageRoute<void>(
+      builder: (_) => BlocProvider.value(value: cubit, child: page),
+    ),
   );
 
   switch (action) {

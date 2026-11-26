@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:lawnly/core/l10n/localized_text.dart';
 import 'package:lawnly/core/di/injection.dart';
 import 'package:lawnly/core/l10n/app_strings.dart';
 import 'package:lawnly/core/theme/app_theme.dart';
@@ -90,11 +91,13 @@ class _FertilizerProgramsPageState extends State<FertilizerProgramsPage> {
     return FertilizerProgram(
       id: '${CustomProgram.idPrefix}${custom.id}',
       brand: '',
-      name: custom.name,
-      summary: strings.customSummary(
-        custom.product,
-        custom.doseGramsPerSqm,
-        strings.daysCount(custom.intervalDays),
+      name: LocalizedText.same(custom.name),
+      summary: LocalizedText.same(
+        strings.customSummary(
+          custom.product,
+          custom.doseGramsPerSqm,
+          strings.daysCount(custom.intervalDays),
+        ),
       ),
       steps: const [],
     );
@@ -186,7 +189,7 @@ class _ProgramCard extends StatelessWidget {
           Row(
             spacing: Insets.small,
             children: [
-              Expanded(child: Text(program.name, style: context.textTheme.titleMedium)),
+              Expanded(child: Text(program.name.text, style: context.textTheme.titleMedium)),
               if (active) GuideBadge(strings.programsActive),
               if (onEdit != null)
                 IconButton(
@@ -202,7 +205,7 @@ class _ProgramCard extends StatelessWidget {
                 ),
             ],
           ),
-          Text(program.summary, style: context.textTheme.bodyMedium),
+          Text(program.summary.text, style: context.textTheme.bodyMedium),
           for (final step in program.steps)
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -248,10 +251,10 @@ class _ProgramCard extends StatelessWidget {
   }
 
   String _label(BuildContext context, ProgramStep step) {
-    if (!step.hasDose) return step.product;
+    if (!step.hasDose) return step.product.text;
     final dose = step.doseTo == null || step.doseTo == step.doseFrom
         ? '${step.doseFrom}'
         : '${step.doseFrom}–${step.doseTo}';
-    return '${step.product}, ${context.strings.programsDose(dose)}';
+    return '${step.product.text}, ${context.strings.programsDose(dose)}';
   }
 }

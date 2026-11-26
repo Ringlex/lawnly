@@ -1,5 +1,5 @@
+import 'package:lawnly/core/l10n/current_l10n.dart';
 import 'dart:async';
-import 'dart:ui';
 
 import 'package:collection/collection.dart';
 import 'package:intl/intl.dart';
@@ -85,7 +85,7 @@ class NotificationScheduler {
     if (!prefs.enabled) return _gateway.replaceAll(const []);
     if (input == null) return;
 
-    final strings = lookupL10n(const Locale('pl'));
+    final strings = currentL10n();
     final now = _now();
     final planned = _planner.plan(
       prefs: prefs,

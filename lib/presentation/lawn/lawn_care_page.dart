@@ -44,7 +44,7 @@ class _LawnCarePageState extends State<LawnCarePage> {
     final plan = await getIt<CareService>().plan().run();
     final id = plan.activeProgramId;
     final custom = plan.customPrograms.where((p) => '${CustomProgram.idPrefix}${p.id}' == id);
-    final name = custom.firstOrNull?.name ?? programById(id)?.name;
+    final name = custom.firstOrNull?.name ?? programById(id)?.name.text;
     if (mounted) setState(() => _programName = name);
   }
 

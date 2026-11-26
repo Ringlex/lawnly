@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:lawnly/core/l10n/app_strings.dart';
+import 'package:lawnly/core/l10n/current_l10n.dart';
 import 'package:lawnly/core/theme/app_theme.dart';
 import 'package:lawnly/data/plan/care_plan.dart';
 import 'package:lawnly/data/weather/day_forecast.dart';
@@ -30,11 +31,12 @@ extension CareKindStyle on CareKind {
 }
 
 extension CalendarFormats on BuildContext {
-  String shortDate(DateTime date) => DateFormat('d.MM').format(date);
+  String shortDate(DateTime date) => DateFormat(isEnglish ? 'd MMM' : 'd.MM').format(date);
 
   String longDate(DateTime date) => DateFormat('EEEE, d MMMM').format(date);
 
-  String weekdayDate(DateTime date) => capitalized(DateFormat('EEEE d.MM').format(date));
+  String weekdayDate(DateTime date) =>
+      capitalized(DateFormat(isEnglish ? 'EEEE, d MMM' : 'EEEE d.MM').format(date));
 
   String weatherSummary(DayForecast day) {
     final temp = day.maxTempC.round();

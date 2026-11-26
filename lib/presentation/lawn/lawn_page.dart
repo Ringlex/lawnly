@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lawnly/core/branding/lawnly_mark.dart';
 import 'package:lawnly/core/di/injection.dart';
 import 'package:lawnly/core/l10n/app_strings.dart';
+import 'package:lawnly/core/l10n/language_controller.dart';
 import 'package:lawnly/core/theme/app_theme.dart';
 import 'package:lawnly/data/lawn/lawn_profile.dart';
 import 'package:lawnly/data/plan/care_plan.dart';
@@ -105,6 +106,9 @@ class LawnPage extends StatelessWidget {
                 Gap.xLarge,
                 _SectionTitle(strings.lawnAppearance),
                 const _ThemePicker(),
+                Gap.xLarge,
+                _SectionTitle(strings.languageTitle),
+                const _LanguagePicker(),
               ],
             ),
           );
@@ -352,7 +356,8 @@ class _ProgramsRowState extends State<_ProgramsRow> {
     final plan = await _service.plan().run();
     final id = plan.activeProgramId;
     final custom = plan.customPrograms.where((p) => '${CustomProgram.idPrefix}${p.id}' == id);
-    if (mounted) setState(() => _activeName = custom.firstOrNull?.name ?? programById(id)?.name);
+    final name = custom.firstOrNull?.name ?? programById(id)?.name.text;
+    if (mounted) setState(() => _activeName = name);
   }
 
   @override
@@ -444,6 +449,39 @@ class _ThemePicker extends StatelessWidget {
         AdaptiveThemeMode.dark => adaptive.setDark(),
         AdaptiveThemeMode.system => adaptive.setSystem(),
       },
+    );
+  }
+}
+
+class _LanguagePicker extends StatefulWidget {
+  const _LanguagePicker();
+
+  @override
+  State<_LanguagePicker> createState() => _LanguagePickerState();
+}
+
+class _LanguagePickerState extends State<_LanguagePicker> {
+  final _language = getIt<LanguageController>();
+
+  Future<void> _select(AppLanguage language) async {
+    await _language.select(language);
+    if (mounted) setState(() {});
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final strings = context.strings;
+
+    return SegmentedChoice<AppLanguage>(
+      values: AppLanguage.values,
+      selected: _language.preference,
+      fontSize: 14,
+      labelOf: (language) => switch (language) {
+        AppLanguage.system => strings.languageSystem,
+        AppLanguage.pl => 'Polski',
+        AppLanguage.en => 'English',
+      },
+      onSelected: _select,
     );
   }
 }

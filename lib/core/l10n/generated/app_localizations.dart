@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
+import 'app_localizations_en.dart';
 import 'app_localizations_pl.dart';
 
 // ignore_for_file: type=lint
@@ -90,7 +91,7 @@ abstract class L10n {
       ];
 
   /// A list of this localizations delegate's supported locales.
-  static const List<Locale> supportedLocales = <Locale>[Locale('pl')];
+  static const List<Locale> supportedLocales = <Locale>[Locale('en'), Locale('pl')];
 
   /// No description provided for @appTagline.
   ///
@@ -1651,6 +1652,36 @@ abstract class L10n {
   /// In pl, this message translates to:
   /// **'i {mm} mm z podlewania'**
   String journalWateringMm(String mm);
+
+  /// No description provided for @languageTitle.
+  ///
+  /// In pl, this message translates to:
+  /// **'Język'**
+  String get languageTitle;
+
+  /// No description provided for @languageSystem.
+  ///
+  /// In pl, this message translates to:
+  /// **'Systemowy'**
+  String get languageSystem;
+
+  /// No description provided for @notifChannelName.
+  ///
+  /// In pl, this message translates to:
+  /// **'Pielęgnacja trawnika'**
+  String get notifChannelName;
+
+  /// No description provided for @programNoteAverage.
+  ///
+  /// In pl, this message translates to:
+  /// **'średnio {value}'**
+  String programNoteAverage(String value);
+
+  /// No description provided for @programNoteSource.
+  ///
+  /// In pl, this message translates to:
+  /// **'Źródło: {site}'**
+  String programNoteSource(String site);
 
   /// No description provided for @lawnTitle.
   ///
@@ -3786,7 +3817,7 @@ class _L10nDelegate extends LocalizationsDelegate<L10n> {
   }
 
   @override
-  bool isSupported(Locale locale) => <String>['pl'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['en', 'pl'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_L10nDelegate old) => false;
@@ -3795,6 +3826,8 @@ class _L10nDelegate extends LocalizationsDelegate<L10n> {
 L10n lookupL10n(Locale locale) {
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
+    case 'en':
+      return L10nEn();
     case 'pl':
       return L10nPl();
   }

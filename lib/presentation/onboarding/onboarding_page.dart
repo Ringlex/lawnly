@@ -95,11 +95,7 @@ class _OnboardingViewState extends State<_OnboardingView> {
               children: [
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20, Insets.xxLarge, 20, 0),
-                  child: _StepHeader(
-                    step: state.step,
-                    onBack: cubit.back,
-                    onClose: widget.onClose,
-                  ),
+                  child: _StepHeader(step: state.step, onBack: cubit.back, onClose: widget.onClose),
                 ),
                 Expanded(
                   child: PageView(

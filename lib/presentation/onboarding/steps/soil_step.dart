@@ -6,6 +6,7 @@ import 'package:lawnly/core/theme/app_theme.dart';
 import 'package:lawnly/data/lawn/lawn_profile.dart';
 import 'package:lawnly/presentation/common/dimen.dart';
 import 'package:lawnly/presentation/common/form_controls.dart';
+import 'package:lawnly/presentation/common/text_utils.dart';
 import 'package:lawnly/presentation/onboarding/onboarding_cubit.dart';
 import 'package:lawnly/presentation/onboarding/onboarding_page.dart';
 import 'package:lawnly/presentation/onboarding/onboarding_state.dart';
@@ -27,7 +28,7 @@ class _SoilStepState extends State<SoilStep> {
   void initState() {
     super.initState();
     final ph = context.read<OnboardingCubit>().state.draft.soilPh;
-    _ph = TextEditingController(text: ph?.toString().replaceAll('.', ',') ?? '');
+    _ph = TextEditingController(text: ph == null ? '' : formatDecimal(ph));
   }
 
   @override

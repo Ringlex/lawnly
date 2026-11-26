@@ -30,3 +30,10 @@ Zadanie: użytkownik zgłasza problem z trawnikiem, czasem ze zdjęciem. Zawęź
 export const ASK_SYSTEM = `${LAWN_EXPERT}
 
 Zadanie: odpowiedz na pytanie użytkownika o jego trawnik. Jeśli pytanie nie dotyczy trawnika ani ogrodu, odpowiedz jednym zdaniem, że pomagasz tylko w sprawach trawnika, bez propozycji zabiegów.`;
+
+const ENGLISH_RULE =
+  'Language: the user reads English. Write every text field of the answer in plain, short English, even though these instructions and the lawn data are in Polish.';
+
+export function inLanguage(system: string, language: unknown): string {
+  return language === 'en' ? `${system}\n\n${ENGLISH_RULE}` : system;
+}

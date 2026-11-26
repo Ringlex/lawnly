@@ -1,3 +1,4 @@
+import 'package:lawnly/core/l10n/language_controller.dart';
 import 'package:get_it/get_it.dart';
 import 'package:lawnly/core/constants/app_const.dart';
 import 'package:lawnly/data/assistant/assistant_client.dart';
@@ -36,11 +37,13 @@ Future<void> configureDependencies() async {
   await notificationGateway.initialize();
 
   final storage = SharedPreferencesAdapter(sharedPreferences: sharedPreferences);
+  final language = await LanguageController.load(storage);
   final lawnDirectory = await LawnDirectory.load(storage);
   final lawnStorage = LawnScopedStorageAdapter(adapter: storage, lawns: lawnDirectory);
 
   getIt
     ..registerSingleton<StorageAdapter>(storage)
+    ..registerSingleton(language)
     ..registerSingleton(lawnDirectory)
     ..registerSingleton<http.Client>(http.Client())
     ..registerSingleton(

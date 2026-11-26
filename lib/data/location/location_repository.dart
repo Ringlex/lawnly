@@ -1,3 +1,4 @@
+import 'package:lawnly/core/l10n/current_l10n.dart';
 import 'dart:convert';
 
 import 'package:fpdart/fpdart.dart';
@@ -41,7 +42,7 @@ class LocationRepository {
         final uri = Uri.https(_geocodingHost, '/v1/search', {
           'name': query.trim(),
           'count': '1',
-          'language': 'pl',
+          'language': currentLanguageCode,
           'format': 'json',
         });
         final response = await _client.get(uri);
